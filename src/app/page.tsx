@@ -4,7 +4,7 @@ import Hero from "./_assets/hero-image.png";
 
 export default function Page() {
   return (
-    <Container maxWidth="xl" sx={{ py: 8 }}>
+    <Container maxWidth="xl" sx={{ py: 4 }}>
       <Box
         sx={{
           display: "flex",
@@ -30,11 +30,11 @@ export default function Page() {
           >
             Welcome to PopVillion 🎉
           </Typography>
-          <Typography variant="h6">
+          <Typography variant="subtitle1" sx={{ color: "text.secondary", fontSize: "1.2rem" }}>
             A happy little vault of fun collectibles, from Funkos to quirky
             treasures! Someday, these cuties might be up for adoption. 🌟
           </Typography>
-          <Button variant="contained" color="secondary" size="large">
+          <Button variant="contained" color="secondary" size="large" >
             Shop Now
           </Button>
         </Box>

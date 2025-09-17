@@ -1,4 +1,5 @@
 import { List, ListItemButton } from "@mui/material";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export function HeaderMenu() {
@@ -6,6 +7,7 @@ export function HeaderMenu() {
 
   const headerMenu = [
     { name: "Home", href: "/" },
+    { name: "Collections", href: "/collections" },
     { name: "Contact", href: "/contact" },
   ];
   return (
@@ -19,6 +21,7 @@ export function HeaderMenu() {
     >
       {headerMenu.map((item) => (
         <ListItemButton
+          LinkComponent={Link}
           key={item.name}
           href={item.href}
           sx={{
