@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="0 0 420 420" aria-labelledby="titleDesc" role="img">
+  <title id="titleDesc">Deadpool-themed mystery Funko Pop box with toy</title>
+
+  <defs>
+    <!-- shadow -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    <filter id="tagShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect width="100%" height="100%" fill="#fff"/>
+
+  <!-- Funko Pop box -->
+  <g transform="translate(50,40)" filter="url(#softShadow)">
+    <!-- side panel -->
+    <path d="M260 20 L320 60 L320 320 L260 280 Z" fill="#FAFAFA" stroke="#D9D9D9" stroke-width="1.5"/>
+
+    <!-- front panel -->
+    <rect x="20" y="20" width="240" height="300" rx="16" ry="16" fill="#FFFFFF" stroke="#B3B3B3" stroke-width="2"/>
+
+    <!-- top flap -->
+    <path d="M20 20 L140 0 L260 20 L260 60 L20 60 Z" fill="#FDFDFD" stroke="#CCCCCC" stroke-width="1.5"/>
+
+    <!-- window -->
+    <g>
+      <rect x="40" y="70" width="200" height="160" rx="14" ry="14" fill="#D32F2F" opacity="0.25"/>
+      <rect x="40" y="70" width="200" height="160" rx="14" ry="14" fill="none" stroke="#D32F2F" stroke-width="2"/>
+    </g>
+
+    <!-- inside silhouette -->
+    <g transform="translate(140,150)">
+      <circle cx="0" cy="-30" r="34" fill="#B71C1C"/>
+      <rect x="-25" y="-10" width="50" height="40" rx="12" fill="#B71C1C"/>
+      <text x="0" y="-5" text-anchor="middle" font-family="Comic Sans MS, sans-serif" font-weight="700" font-size="40" fill="#fff">?</text>
+    </g>
+
+    <!-- POP badge -->
+    <g transform="translate(36,40)">
+      <rect x="0" y="0" rx="10" ry="10" width="70" height="32" fill="#D32F2F" />
+      <text x="35" y="21" text-anchor="middle" font-family="Segoe UI, sans-serif" font-weight="700" font-size="14" fill="#fff">POP</text>
+    </g>
+
+    <!-- product title -->
+    <text x="40" y="260" font-family="Comic Sans MS, sans-serif" font-weight="600" font-size="16" fill="#D32F2F">Mystery Box</text>
+    <text x="40" y="280" font-family="Segoe UI, sans-serif" font-weight="400" font-size="12" fill="#555">Deadpool Edition</text>
+
+    <!-- SALE tag -->
+    <g transform="translate(220,110)" filter="url(#tagShadow)">
+      <rect x="0" y="0" rx="14" ry="14" width="64" height="36" fill="#000"/>
+      <text x="32" y="24" text-anchor="middle" font-family="Comic Sans MS, sans-serif" font-weight="700" font-size="16" fill="#FF3B3B">SALE</text>
+    </g>
+  </g>
+
+  <!-- Mystery Deadpool Funko Pop in front -->
+  <g transform="translate(260,270)" filter="url(#softShadow)">
+    <!-- head -->
+    <circle cx="0" cy="0" r="46" fill="#D32F2F" stroke="#000" stroke-width="3"/>
+    <!-- black eye patches -->
+    <ellipse cx="-18" cy="-6" rx="14" ry="20" fill="#000"/>
+    <ellipse cx="18" cy="-6" rx="14" ry="20" fill="#000"/>
+    <!-- white eyes -->
+    <ellipse cx="-18" cy="-6" rx="6" ry="10" fill="#fff"/>
+    <ellipse cx="18" cy="-6" rx="6" ry="10" fill="#fff"/>
+    <!-- body -->
+    <rect x="-28" y="40" width="56" height="60" rx="16" fill="#D32F2F" stroke="#000" stroke-width="2"/>
+    <!-- arms -->
+    <rect x="-48" y="50" width="20" height="40" rx="10" fill="#D32F2F" stroke="#000" stroke-width="2"/>
+    <rect x="28" y="50" width="20" height="40" rx="10" fill="#D32F2F" stroke="#000" stroke-width="2"/>
+    <!-- legs -->
+    <rect x="-22" y="100" width="18" height="34" rx="6" fill="#D32F2F" stroke="#000" stroke-width="2"/>
+    <rect x="4" y="100" width="18" height="34" rx="6" fill="#D32F2F" stroke="#000" stroke-width="2"/>
+    <!-- question mark -->
+    <text x="0" y="10" text-anchor="middle" font-family="Comic Sans MS, sans-serif" font-weight="700" font-size="46" fill="#fff">?</text>
+  </g>
+
+  <!-- ground shadow -->
+  <ellipse cx="230" cy="380" rx="120" ry="18" fill="#000" opacity="0.1"/>
+</svg>
