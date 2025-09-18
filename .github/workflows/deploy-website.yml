@@ -15,7 +15,7 @@ jobs:
       - name: Set up pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 9  # or match your local pnpm version
+          version: 9
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -26,10 +26,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build and export Next.js
+      - name: Build Next.js
         run: |
           pnpm build
-          pnpm export
 
       - name: Sync to S3
         run: aws s3 sync ./out s3://popvillion-website --delete
