@@ -30,8 +30,8 @@ export default function Page() {
           >
             Welcome to PopVillion 🎉
           </Typography>
-          <Typography variant="subtitle1" sx={{ color: "text.secondary", fontSize: "1.2rem" }}>
-            A happy little vault of fun collectibles, from Funkos to quirky
+          <Typography component={"h2"} variant="subtitle1" sx={{ color: "text.secondary", fontSize: "1.2rem" }}>
+            A happy little vault of fun collectibles, from Funko Pops to quirky
             treasures! Someday, these cuties might be up for adoption. 🌟
           </Typography>
           <Button variant="contained" color="secondary" size="large" >

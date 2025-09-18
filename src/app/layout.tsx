@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 const title = "PopVillion 🎁 | A Playful World of Collectibles";
 const description =
-  "Welcome to PopVillion — a happy little vault of fun collectibles, from Funkos to quirky treasures! Someday, these cuties might be up for adoption. 🌟";
+  "Welcome to PopVillion — a happy little vault of fun collectibles, from Funko Pops to quirky treasures! Someday, these cuties might be up for adoption. 🌟";
 
 export const metadata: Metadata = {
   title,
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "PopVillion",
     images: [
       {
-        url: "https://d3fu52h97rrvnu.cloudfront.net/og-image.jpg", // Absolute URL
+        url: "https://d3fu52h97rrvnu.cloudfront.net/og-image.png", // Absolute URL
         width: 1200,
         height: 630,
         alt: "Welcome to PopVillion",
