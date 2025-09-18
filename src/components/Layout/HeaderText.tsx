@@ -4,9 +4,8 @@ import { Box, Typography } from "@mui/material";
 
 export function HeaderText() {
   return (
-    <Box>
+    <Box sx={{ display: "flex", flexFlow: "column", alignItems: "flex-start" }}>
       <Typography
-        variant="h6"
         component="a"
         href="/"
         sx={{
@@ -20,7 +19,8 @@ export function HeaderText() {
         PopVillion
       </Typography>
       <Typography
-        variant="subtitle1"
+        component={"span"}
+        variant="subtitle2"
         sx={{
           fontSize: "1rem",
           color: "text.secondary",
