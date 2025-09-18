@@ -2,9 +2,7 @@ name: Deploy Website
 description: Deploy the Next.js website to S3 and invalidate CloudFront cache
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
