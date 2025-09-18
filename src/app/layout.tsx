@@ -16,10 +16,29 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "PopVillion 🎁 | A Playful World of Collectibles";
+const description =
+  "Welcome to PopVillion — a happy little vault of fun collectibles, from Funkos to quirky treasures! Someday, these cuties might be up for adoption. 🌟";
+
 export const metadata: Metadata = {
-  title: "PopVillion 🎁 | A Playful World of Collectibles",
-  description:
-    "Welcome to PopVillion — a happy little vault of fun collectibles, from Funkos to quirky treasures! Someday, these cuties might be up for adoption. 🌟",
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: "https://d3fu52h97rrvnu.cloudfront.net/",
+    siteName: "PopVillion",
+    images: [
+      {
+        url: "https://d3fu52h97rrvnu.cloudfront.net/og-image.jpg", // Absolute URL
+        width: 1200,
+        height: 630,
+        alt: "Welcome to PopVillion",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
