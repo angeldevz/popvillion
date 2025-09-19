@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const title = "PopVillion 🎁 | A Playful World of Collectibles";
+const title = "Atomic Siopao Universe | Blast Into a World of Fun Finds!";
 const description =
-  "Welcome to PopVillion — a happy little vault of fun collectibles, from Funko Pops to quirky treasures! Someday, these cuties might be up for adoption. 🌟";
+  "Step into the Atomic Siopao Universe — your playful vault of awesome collectibles, from Funko Pops to rare quirky finds! Who knows? Someday, these cuties could be yours. 🚀";
 
 export const metadata: Metadata = {
   title,
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     title,
     description,
     url: "https://d3fu52h97rrvnu.cloudfront.net/",
-    siteName: "PopVillion",
+    siteName: "Atomic Siopao Universe",
     images: [
       {
         url: "https://d3fu52h97rrvnu.cloudfront.net/og-image.png", // Absolute URL
         width: 1200,
         height: 630,
-        alt: "Welcome to PopVillion",
+        alt: "Welcome to Atomic Siopao Universe",
       },
     ],
     locale: "en_US",

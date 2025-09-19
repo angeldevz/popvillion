@@ -16,7 +16,7 @@ export function HeaderText() {
           fontSize: "1.5rem",
         }}
       >
-        PopVillion
+        Atomic Siopao
       </Typography>
       <Typography
         component={"span"}
@@ -26,7 +26,7 @@ export function HeaderText() {
           color: "text.secondary",
         }}
       >
-        A Playful World of Collectibles
+        Blast Into a World of Fun Finds!
       </Typography>
     </Box>
   );

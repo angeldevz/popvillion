@@ -28,18 +28,29 @@ export default function Page() {
             variant="h1"
             sx={{ fontWeight: "bold", fontSize: { xs: "1.5rem", lg: "3rem" } }}
           >
-            Welcome to PopVillion 🎉
+            Welcome to <br />
+            Atomic Siopao Universe!
           </Typography>
-          <Typography component={"h2"} variant="subtitle1" sx={{ color: "text.secondary", fontSize: "1.2rem" }}>
+          <Typography
+            component={"h2"}
+            variant="subtitle1"
+            sx={{ color: "text.secondary", fontSize: "1.2rem" }}
+          >
             A happy little vault of fun collectibles, from Funko Pops to quirky
             treasures! Someday, these cuties might be up for adoption. 🌟
           </Typography>
-          <Button variant="contained" color="secondary" size="large" >
+          <Button variant="contained" color="secondary" size="large">
             Shop Now
           </Button>
         </Box>
         <Box sx={{ flex: 1, display: "flex", justifyContent: "center" }}>
-          <Image src={Hero} alt="Hero Image" width={500} height={500} className="w-auto h-60 lg:h-auto" />
+          <Image
+            src={Hero}
+            alt="Hero Image"
+            width={500}
+            height={500}
+            className="w-auto h-60 lg:h-auto"
+          />
         </Box>
       </Box>
     </Container>

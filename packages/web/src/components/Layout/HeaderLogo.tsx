@@ -17,10 +17,10 @@ export function HeaderLogo() {
       component={"a"}
       href="/"
     >
-      <Image className="main-img transition-all duration-500" src={Logo} alt="PopVillion Logo" width={160} height={160} />
+      <Image className="main-img transition-all duration-500" src={Logo} alt="Atomic Siopao Universe Logo" width={160} height={160} />
       <Image
         src={Characters}
-        alt="PopVillion Logo"
+        alt="Atomic Siopao Universe Logo"
         width={160}
         height={160}
         className="scale-img transition-all duration-500 absolute top-0 right-0"
