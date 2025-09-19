@@ -6,6 +6,7 @@ After 16 years in the corporate world, I’m starting my first side quest — an
 - React
 - TailwindCSS
 - Material UI
+- SST (for local server)
 
 SOON:
 - NodeJS
