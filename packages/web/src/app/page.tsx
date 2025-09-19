@@ -29,7 +29,7 @@ export default function Page() {
             sx={{ fontWeight: "bold", fontSize: { xs: "1.5rem", lg: "3rem" } }}
           >
             Welcome to <br />
-            Atomic Siopao Universe!
+            Atomic Siopao's Emporium!
           </Typography>
           <Typography
             component={"h2"}
