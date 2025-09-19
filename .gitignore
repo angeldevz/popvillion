@@ -1,3 +1,6 @@
 .history
 node_modules
 .turbo
+
+# sst
+.sst
