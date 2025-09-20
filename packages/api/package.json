@@ -1,0 +1,25 @@
+{
+  "name": "@popvillion/api",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "offline": "serverless offline",
+    "deploy": "serverless deploy",
+    "dev": "nodemon --watch src --ext ts,js --exec 'ts-node src/server.ts'"
+  },
+  "dependencies": {
+    "@pothos/core": "^4.9.1",
+    "aws-lambda": "^1.0.7",
+    "graphql": "^16.11.0",
+    "graphql-yoga": "^5.16.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.152",
+    "@types/node": "^20",
+    "nodemon": "^3.1.10",
+    "serverless": "^4.19.1",
+    "serverless-offline": "^14.4.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5"
+  }
+}
