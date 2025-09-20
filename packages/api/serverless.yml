@@ -1,5 +1,7 @@
 service: graphql-lambda
 
+frameworkVersion: '4.19.1' # disable auto-updates, lock to this version
+
 provider:
   name: aws
   runtime: nodejs20.x
