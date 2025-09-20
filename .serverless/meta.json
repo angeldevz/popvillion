@@ -1,0 +1,27 @@
+{
+  "unknown": {
+    "versionFramework": "4.19.1",
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "command": [
+      "login"
+    ],
+    "options": {},
+    "orgId": "8e154ca4-3658-43b4-bcae-6ea381a441ec",
+    "orgName": "popvillion",
+    "userId": "v4jNCD5dWsdhCykX4b",
+    "userName": "popvillion",
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
+  }
+}
