@@ -5,6 +5,14 @@
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
+    "deploy": {
+      "dependsOn": ["build"],   
+      "cache": false            
+    },
+    "deploy:prod": {
+      "dependsOn": ["deploy"],  
+      "cache": false
+    },
     "check-types": {
       "dependsOn": ["^check-types"]
     },
