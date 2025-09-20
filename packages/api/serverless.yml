@@ -1,6 +1,6 @@
 service: graphql-lambda
 
-frameworkVersion: '4.19.1' # disable auto-updates, lock to this version
+frameworkVersion: '~4.19.1' # disable auto-updates, lock to this version
 
 provider:
   name: aws
