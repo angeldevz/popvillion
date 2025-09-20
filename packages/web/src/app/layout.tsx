@@ -51,7 +51,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme} >
           <CssBaseline />
           <Box
             sx={{

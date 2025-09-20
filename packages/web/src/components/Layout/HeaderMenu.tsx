@@ -28,14 +28,14 @@ export function HeaderMenu() {
             ":hover": {
               textDecoration: "underline",
               textUnderlineOffset: "1rem",
-              color: "primary.main",
+              color: "primary.light",
               backgroundColor: "transparent",
             },
             ...(pathname === item.href
               ? {
                   textDecoration: "underline",
                   textUnderlineOffset: "1rem",
-                  color: "primary.main",
+                  color: "primary.light",
                   backgroundColor: "transparent",
                 }
               : {}),

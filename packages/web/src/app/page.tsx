@@ -26,7 +26,11 @@ export default function Page() {
         >
           <Typography
             variant="h1"
-            sx={{ fontWeight: "bold", fontSize: { xs: "1.5rem", lg: "3rem" } }}
+            sx={{
+              fontWeight: "bold",
+              fontSize: { xs: "1.5rem", lg: "3rem" },
+              color: "primary.contrastText",
+            }}
           >
             Welcome to <br />
             Atomic Siopao's Emporium!
@@ -39,7 +43,7 @@ export default function Page() {
             A happy little vault of fun collectibles, from Funko Pops to quirky
             treasures! Someday, these cuties might be up for adoption. 🌟
           </Typography>
-          <Button variant="contained" color="secondary" size="large">
+          <Button variant="contained" color="primary" size="large">
             Shop Now
           </Button>
         </Box>
