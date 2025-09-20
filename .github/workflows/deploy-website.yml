@@ -35,8 +35,8 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ap-southeast-1
+        working-directory: packages/api
         run: pnpm i -g serverless
-             cd packages/api
              pnpm run deploy:prod
 
       - name: Sync to S3
