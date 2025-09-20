@@ -37,7 +37,7 @@ jobs:
           AWS_REGION: ap-southeast-1
         run: pnpm i -g serverless
              cd packages/api
-             pnpm deploy:prod
+             pnpm run deploy:prod
 
       - name: Sync to S3
         run: aws s3 sync ./packages/web/out s3://popvillion-website --delete
