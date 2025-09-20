@@ -9,6 +9,10 @@
       "dependsOn": ["build"],   
       "cache": false            
     },
+    "deploy:dev": {
+      "dependsOn": ["deploy"],  
+      "cache": false
+    },
     "deploy:prod": {
       "dependsOn": ["deploy"],  
       "cache": false
