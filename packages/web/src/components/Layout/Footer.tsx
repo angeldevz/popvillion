@@ -1,4 +1,3 @@
-import { WavingHandOutlined } from "@mui/icons-material";
 import { Box, Container } from "@mui/material";
 import Link from "next/link";
 
@@ -9,14 +8,13 @@ export function Footer() {
         sx={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "space-between",
+          justifyContent: "center",
           flexWrap: "wrap",
-          gap: 4,
+          gap: 1,
           fontSize: "0.875rem",
           color: "text.secondary",
         }}
       >
-        <span className="flex flex-row gap-2 flex-wrap">
           <span>© {new Date().getFullYear()} Marco Collectibles.</span>
           <span>
             Curated by{" "}
@@ -29,14 +27,6 @@ export function Footer() {
               AtomicSiopaoTV.
             </Link>
           </span>
-        </span>
-        <span className="flex flex-row gap-2 flex-wrap">
-          <span>See a fave?</span>
-          <span>
-            Some pieces are open to offers — say hi!{" "}
-            <WavingHandOutlined sx={{ fontSize: "1rem" }} />
-          </span>
-        </span>
       </Container>
     </Box>
   );

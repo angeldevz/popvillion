@@ -1,6 +1,7 @@
-import { Box, Typography, Button, Container } from "@mui/material";
+import { Box, Typography, Container } from "@mui/material";
 import Image from "next/image";
 import Hero from "./_assets/hero-image.png";
+import { PrimaryButton } from "@components/Button/PrimaryButton";
 
 export default function Page() {
   return (
@@ -21,15 +22,16 @@ export default function Page() {
             flexDirection: "column",
             alignItems: { xs: "center", md: "flex-start" },
             gap: 8,
-            px: 4,
+            px: { xs: 2, md: 4 },
           }}
         >
           <Typography
             variant="h1"
             sx={{
               fontWeight: "bold",
-              fontSize: { xs: "1.5rem", lg: "3rem" },
+              fontSize: { xs: "1.5rem", md: "2rem", lg: "3rem" },
               color: "primary.contrastText",
+              textAlign: { xs: "center", md: "left" },
             }}
           >
             Welcome to <br />
@@ -43,9 +45,7 @@ export default function Page() {
             A happy little vault of fun collectibles, from Funko Pops to quirky
             treasures! Someday, these cuties might be up for adoption. 🌟
           </Typography>
-          <Button variant="contained" color="primary" size="large">
-            Shop Now
-          </Button>
+          <PrimaryButton>Shop Now</PrimaryButton>
         </Box>
         <Box sx={{ flex: 1, display: "flex", justifyContent: "center" }}>
           <Image
@@ -53,7 +53,7 @@ export default function Page() {
             alt="Hero Image"
             width={500}
             height={500}
-            className="w-auto h-60 lg:h-auto"
+            className="w-50 md:w-70 lg:w-80 xl:w-auto"
           />
         </Box>
       </Box>

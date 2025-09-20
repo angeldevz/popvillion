@@ -1,0 +1,15 @@
+@keyframes shine {
+  from { background-position: 0% 0%; }
+  to { background-position: 100% 100%; }
+}
+
+.joker-glass-text {
+  @apply font-extrabold text-4xl;
+  background: linear-gradient(120deg, #ffffff 0%, #2ECC71 40%, #6A0DAD 60%, #ffffff 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: white;
+  -webkit-text-fill-color: transparent;
+  animation: shine 1.5s linear infinite;
+}

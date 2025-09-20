@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "@styles/globals.css";
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import { Header } from "@components/Layout/Header";
 import theme from "../utils/theme";
@@ -47,10 +48,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
         <ThemeProvider theme={theme} >
           <CssBaseline />
           <Box
@@ -66,6 +68,7 @@ export default function RootLayout({
             <Footer />
           </Box>
         </ThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

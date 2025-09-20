@@ -15,7 +15,7 @@ export function HeaderMenu() {
       sx={{
         display: "flex",
         flexFlow: { xs: "column", md: "row" },
-        gap: { xs: 1, md: 4 },
+        gap: { md: 1, lg: 2, xl: 4 },
         fontWeight: "bold",
       }}
     >

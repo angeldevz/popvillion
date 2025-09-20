@@ -59,6 +59,15 @@ const config: Config = {
       borderRadius: {
         xl: "12px",
       },
+      keyframes: {
+        sheen: {
+          "0%": { transform: "translateX(-100%) skewX(12deg)" },
+          "100%": { transform: "translateX(200%) skewX(12deg)" },
+        },
+      },
+      animation: {
+        sheen: "sheen 2.5s ease-in-out infinite",
+      },
     },
   },
   plugins: [],
