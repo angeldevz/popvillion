@@ -54,6 +54,8 @@ export default function Page() {
             width={500}
             height={500}
             className="w-50 md:w-70 lg:w-80 xl:w-auto"
+            fetchPriority="high"
+            priority
           />
         </Box>
       </Box>

@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "ANALYZE=true next build --turbopack",
     "start": "next start",
     "lint": "eslint",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "analyze": "next analyze"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -16,6 +17,7 @@
     "@mui/icons-material": "^7.3.2",
     "@mui/material": "^7.3.2",
     "@mui/material-nextjs": "^7.3.2",
+    "@next/bundle-analyzer": "^15.5.3",
     "@tailwindcss/postcss": "^4.1.13",
     "next": "15.5.3",
     "postcss": "^8.5.6",

@@ -12,18 +12,28 @@ export function HeaderLogo() {
         width: { xs: "15%", md: "auto" },
         position: "relative",
         ":hover .scale-img": { transform: "scale(1.5)" },
-        ":hover .main-img": { filter: "blur(4px)",  },
+        ":hover .main-img": { filter: "blur(4px)" },
       }}
       component={"a"}
       href="/"
     >
-      <Image className="main-img transition-all duration-500" src={Logo} alt="Atomic Siopao Universe Logo" width={160} height={160} />
+      <Image
+        className="main-img transition-all duration-500"
+        src={Logo}
+        alt="Atomic Siopao Universe Logo"
+        width={160}
+        height={160}
+        fetchPriority="high"
+        priority
+      />
       <Image
         src={Characters}
         alt="Atomic Siopao Universe Logo"
         width={160}
         height={160}
         className="scale-img transition-all duration-500 absolute top-0 right-0"
+        fetchPriority="high"
+        priority
       />
     </Box>
   );

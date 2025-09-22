@@ -1,4 +1,4 @@
-import { List, ListItemButton } from "@mui/material";
+import { List, ListItem, Typography } from "@mui/material";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -20,29 +20,30 @@ export function HeaderMenu() {
       }}
     >
       {headerMenu.map((item) => (
-        <ListItemButton
-          LinkComponent={Link}
-          key={item.name}
-          href={item.href}
-          sx={{
-            ":hover": {
-              textDecoration: "underline",
-              textUnderlineOffset: "1rem",
-              color: "primary.light",
-              backgroundColor: "transparent",
-            },
-            ...(pathname === item.href
-              ? {
-                  textDecoration: "underline",
-                  textUnderlineOffset: "1rem",
-                  color: "primary.light",
-                  backgroundColor: "transparent",
-                }
-              : {}),
-          }}
-        >
-          {item.name}
-        </ListItemButton>
+        <ListItem key={item.name}>
+          <Typography
+            component={Link}
+            href={item.href}
+            sx={{
+              ":hover": {
+                textDecoration: "underline",
+                textUnderlineOffset: "1rem",
+                color: "primary.light",
+                backgroundColor: "transparent",
+              },
+              ...(pathname === item.href
+                ? {
+                    textDecoration: "underline",
+                    textUnderlineOffset: "1rem",
+                    color: "primary.light",
+                    backgroundColor: "transparent",
+                  }
+                : {}),
+            }}
+          >
+            {item.name}
+          </Typography>
+        </ListItem>
       ))}
     </List>
   );
