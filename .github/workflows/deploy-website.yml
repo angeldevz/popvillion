@@ -30,17 +30,17 @@ jobs:
         run: |
           pnpm build
 
-      - name: Install Serverless CLI
-        run: pnpm add -g serverless
+      # - name: Install Serverless CLI
+      #   run: pnpm add -g serverless
 
-      - name: Deploy to AWS Lambda
-        env:
-          SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ap-southeast-1
-        working-directory: ./packages/api
-        run: pnpm run deploy:prod
+      # - name: Deploy to AWS Lambda
+      #   env:
+      #     SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
+      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     AWS_REGION: ap-southeast-1
+      #   working-directory: ./packages/api
+      #   run: pnpm run deploy:prod
 
       - name: Sync to S3
         run: aws s3 sync ./packages/web/out s3://popvillion-website --delete
