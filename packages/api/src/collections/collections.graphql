@@ -1,0 +1,20 @@
+fragment CollectionFragment on Collection {
+  id
+  name
+  series
+  sticker
+  condition
+  pictures
+  remarks
+  stocks
+  price
+  negotiable
+}
+
+
+
+query collections {
+  collections {
+    ...CollectionFragment
+  }
+}

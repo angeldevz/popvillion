@@ -1,0 +1,21 @@
+schema {
+  query: Hello
+}
+
+type Collection {
+  condition: String
+  id: ID
+  name: String
+  negotiable: Boolean
+  pictures: [String!]
+  price: Int
+  remarks: String
+  series: String
+  sticker: String
+  stocks: Int
+}
+
+type Hello {
+  collections: [Collection!]
+  hello: String
+}

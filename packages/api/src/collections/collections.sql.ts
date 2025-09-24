@@ -1,9 +1,10 @@
-import { integer, pgTable, text, varchar } from "drizzle-orm/pg-core";
+import { boolean, integer, pgTable, text, varchar } from "drizzle-orm/pg-core";
 import { createdAt, deletedAt, id, publicId, updatedAt } from "../utils/sql";
+import { InferSelectModel } from "drizzle-orm";
 
 export type Condition = "Mint" | "Near Mint" | "7 to 8" | "Bad Box";
 
-export const collectionTable = pgTable("collections", {
+export const collectionsTable = pgTable("collections", {
   ...id,
   ...publicId,
   name: varchar({ length: 255 }).notNull(),
@@ -13,8 +14,12 @@ export const collectionTable = pgTable("collections", {
   condition: varchar({ length: 255 }).notNull().$type<Condition>(),
   pictures: text("pictures").array().notNull(),
   remarks: varchar({ length: 255 }),
-  price: integer().notNull(),
+  stocks: integer().notNull().default(0),
+  price: integer().notNull().default(0),
+  negotiable: boolean().notNull().default(true),
   ...createdAt,
   ...updatedAt,
   ...deletedAt,
 });
+
+export type Collection = InferSelectModel<typeof collectionsTable>;

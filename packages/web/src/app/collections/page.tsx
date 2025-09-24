@@ -1,6 +1,11 @@
-import { Box, Container, Typography } from "@mui/material";
+'use client'
+import { Box, Container, List, ListItem, Typography } from "@mui/material";
+import { useCollectionsQuery } from "@generated/index";
+import Image from "next/image";
+
 
 export default function Page() {
+  const { data, loading, error } = useCollectionsQuery();
   return (
     <Container maxWidth="xl" sx={{ py: 4 }}>
       <Box sx={{ mb: 4, display: "flex", flexFlow: "column", gap: 4 }}>
@@ -24,7 +29,15 @@ export default function Page() {
         </Typography>
       </Box>
       <Box sx={{ display: "flex", flexFlow: "column", gap: 4 }}>
-        {/* Collection items will go here */}
+        <List>
+          {data?.collections?.map((collection) => (
+            <ListItem key={collection.id}>
+              <Typography variant="h2">{collection.name}</Typography>
+              <Typography variant="body1">{collection.remarks}</Typography>
+              <Image src={collection.pictures[0]} alt="Picture" width={200} height={200} />
+            </ListItem>
+          ))}
+        </List>
       </Box>
     </Container>
   );
