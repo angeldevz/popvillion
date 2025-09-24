@@ -6,7 +6,12 @@ export default function Page() {
       <Box sx={{ mb: 4, display: "flex", flexFlow: "column", gap: 4 }}>
         <Typography
           variant="h1"
-          sx={{ fontWeight: "bold", fontSize: { xs: "1.5rem", lg: "3rem" } }}
+          sx={{
+            fontWeight: "bold",
+            fontSize: { xs: "1.5rem", md: "2rem", lg: "3rem" },
+            color: "primary.contrastText",
+            textAlign: { xs: "center", md: "left" },
+          }}
         >
           Collections
         </Typography>

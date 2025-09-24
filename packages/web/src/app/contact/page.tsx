@@ -1,21 +1,31 @@
 import { Facebook } from "@mui/icons-material";
 import { Box, Button, Container, Typography } from "@mui/material";
+import { OurLocation } from "./OurLocation";
 
 export default function Page() {
   return (
-    <Container maxWidth="xl" sx={{ py: 4 }}>
+    <Container
+      maxWidth="xl"
+      sx={{ py: 4, display: "flex", flexFlow: "row", gap: 8 }}
+    >
       <Box
         sx={{
-          mb: 4,
+          flex: 1,
           display: "flex",
           flexFlow: "column",
-          gap: 4,
+          gap: 2,
           alignItems: "start",
         }}
       >
         <Typography
           variant="h1"
-          sx={{ fontWeight: "bold", fontSize: { xs: "1.5rem", lg: "3rem" } }}
+          sx={{
+            fontWeight: "bold",
+            fontSize: { xs: "1.5rem", md: "2rem", lg: "3rem" },
+            color: "primary.contrastText",
+            textAlign: { xs: "center", md: "left" },
+            mb: 4,
+          }}
         >
           Contact us
         </Typography>
@@ -34,6 +44,13 @@ export default function Page() {
         >
           Message us
         </Button>
+      </Box>
+      <Box
+        sx={{
+          flex: 1,
+        }}
+      >
+        <OurLocation />
       </Box>
     </Container>
   );
