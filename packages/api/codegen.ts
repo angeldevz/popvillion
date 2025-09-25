@@ -13,8 +13,6 @@ const config: CodegenConfig = {
       ],
       config: {
         withHooks: true, // generate hooks
-        reactApolloVersion: 4, // match your Apollo Client version
-        importFromReact: true      // ✅ forces @apollo/client/react
       },
     },
   },

@@ -1,18 +1,25 @@
+import { Collections } from "@core/collections";
 import { builder } from "../builder";
-import { Collections } from "../collections";
+import { Photo } from "./photos";
+import { Photos } from "@core/photos";
 
-const Collection = builder.objectType("Collection", {
+export const Collection = builder.objectType("Collection", {
   fields: (t) => ({
     id: t.exposeID("id"),
     name: t.exposeString("name"),
     series: t.exposeString("series"),
     sticker: t.exposeString("sticker"),
     condition: t.exposeString("condition"),
-    pictures: t.exposeStringList("pictures"),
     remarks: t.exposeString("remarks"),
     stocks: t.exposeInt("stocks"),
     price: t.exposeInt("price"),
     negotiable: t.exposeBoolean("negotiable"),
+    photo: t.field({
+      type: [Photo],
+      resolve: (collection) => {
+        return Photos.fromCollectionId(collection.public_id);
+      },
+    }),
   }),
 });
 

@@ -1,5 +1,5 @@
-import { builder } from "./builder";
+import { builder } from "@graphql/builder";
 
-import "./query";
+import "@graphql/schema";
 // Export a **GraphQLSchema**
 export const schema = builder.toSchema({});

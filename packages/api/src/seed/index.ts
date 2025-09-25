@@ -1,11 +1,20 @@
-import { db } from "../db";
-import { collectionsSeeder } from "./collections";
+import { photosSeeder } from "./photos";
 
-const tables = [collectionsSeeder];
+type SeedHandler = () => Promise<void>;
+
+const tables: SeedHandler[] = [photosSeeder];
 
 async function seeder() {
   console.log("Seeding...");
-  await Promise.allSettled(tables.map((seed) => seed()));
+  await Promise.all(
+    tables.map(async (seed) => {
+      try {
+        await seed();
+      } catch (e) {
+        console.log(e);
+      }
+    })
+  );
   console.log("Seeding complete!");
 }
 

@@ -1,8 +1,20 @@
-'use client'
-import { Box, Container, List, ListItem, Typography } from "@mui/material";
+"use client";
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Chip,
+  Container,
+  List,
+  ListItem,
+  Typography,
+} from "@mui/material";
 import { useCollectionsQuery } from "@generated/index";
-import Image from "next/image";
-
+import { PrimaryButton } from "@components/Button/PrimaryButton";
+import { Tag } from "@mui/icons-material";
 
 export default function Page() {
   const { data, loading, error } = useCollectionsQuery();
@@ -29,12 +41,60 @@ export default function Page() {
         </Typography>
       </Box>
       <Box sx={{ display: "flex", flexFlow: "column", gap: 4 }}>
-        <List>
+        <List
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+          }}
+        >
           {data?.collections?.map((collection) => (
             <ListItem key={collection.id}>
-              <Typography variant="h2">{collection.name}</Typography>
-              <Typography variant="body1">{collection.remarks}</Typography>
-              <Image src={collection.pictures[0]} alt="Picture" width={200} height={200} />
+              <Card
+                variant="elevation"
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  p: 2,
+                  rounded: 8,
+                  display: "flex",
+                  flexFlow: "column",
+                  gap: 2,
+                  boxShadow: "primary.main",
+                }}
+              >
+                <CardHeader
+                  title={collection.name}
+                  subheader={collection.series}
+                />
+                <CardContent>
+                  {collection.sticker && (
+                    <Chip
+                      icon={<Tag />}
+                      label={collection.sticker}
+                      variant="outlined" // Or 'filled' for a solid background
+                    />
+                  )}
+                </CardContent>
+                <CardActions
+                  sx={{
+                    mt: "auto",
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  {collection.negotiable ? (
+                    <PrimaryButton>Send offer</PrimaryButton>
+                  ) : (
+                    <Button
+                      variant="contained"
+                      sx={{ backgroundColor: "success.dark" }}
+                    >
+                      Add to Cart
+                    </Button>
+                  )}
+                </CardActions>
+              </Card>
             </ListItem>
           ))}
         </List>

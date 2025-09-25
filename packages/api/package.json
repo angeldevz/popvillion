@@ -6,7 +6,7 @@
     "offline": "serverless offline",
     "deploy:dev": "serverless deploy --stage dev",
     "deploy:prod": "serverless deploy --stage prod",
-    "dev": "nodemon --watch src --ext ts,js --exec 'ts-node src/server.ts'",
+    "dev": "nodemon --watch src --ext ts,js --exec 'ts-node -r tsconfig-paths/register src/server.ts'",
     "check-types": "tsc --noEmit",
     "db:generate": "drizzle-kit generate",
     "db:push": "drizzle-kit push --strict --verbose",
@@ -42,12 +42,14 @@
     "@graphql-codegen/typescript-resolvers": "^5.0.0",
     "@types/aws-lambda": "8.10.152",
     "@types/node": "^20.19.17",
+    "csv-parser": "^3.2.0",
     "drizzle-kit": "^0.31.4",
     "graphql-cli": "4.1.0",
     "nodemon": "^3.1.10",
     "serverless": "^4.19.1",
     "serverless-offline": "^14.4.0",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "tsx": "^4.20.5",
     "typescript": "^5"
   }

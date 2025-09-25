@@ -23,7 +23,7 @@ export type Collection = {
   id?: Maybe<Scalars['ID']['output']>;
   name?: Maybe<Scalars['String']['output']>;
   negotiable?: Maybe<Scalars['Boolean']['output']>;
-  pictures?: Maybe<Array<Scalars['String']['output']>>;
+  photo?: Maybe<Array<Photo>>;
   price?: Maybe<Scalars['Int']['output']>;
   remarks?: Maybe<Scalars['String']['output']>;
   series?: Maybe<Scalars['String']['output']>;
@@ -37,12 +37,18 @@ export type Hello = {
   hello?: Maybe<Scalars['String']['output']>;
 };
 
-export type CollectionFragmentFragment = { __typename?: 'Collection', id?: string | null, name?: string | null, series?: string | null, sticker?: string | null, condition?: string | null, pictures?: Array<string> | null, remarks?: string | null, stocks?: number | null, price?: number | null, negotiable?: boolean | null };
+export type Photo = {
+  __typename?: 'Photo';
+  id?: Maybe<Scalars['ID']['output']>;
+  url?: Maybe<Scalars['String']['output']>;
+};
+
+export type CollectionFragmentFragment = { __typename?: 'Collection', id?: string | null, name?: string | null, series?: string | null, sticker?: string | null, condition?: string | null, remarks?: string | null, stocks?: number | null, price?: number | null, negotiable?: boolean | null, photo?: Array<{ __typename?: 'Photo', url?: string | null }> | null };
 
 export type CollectionsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type CollectionsQuery = { __typename?: 'Hello', collections?: Array<{ __typename?: 'Collection', id?: string | null, name?: string | null, series?: string | null, sticker?: string | null, condition?: string | null, pictures?: Array<string> | null, remarks?: string | null, stocks?: number | null, price?: number | null, negotiable?: boolean | null }> | null };
+export type CollectionsQuery = { __typename?: 'Hello', collections?: Array<{ __typename?: 'Collection', id?: string | null, name?: string | null, series?: string | null, sticker?: string | null, condition?: string | null, remarks?: string | null, stocks?: number | null, price?: number | null, negotiable?: boolean | null, photo?: Array<{ __typename?: 'Photo', url?: string | null }> | null }> | null };
 
 export const CollectionFragmentFragmentDoc = gql`
     fragment CollectionFragment on Collection {
@@ -51,11 +57,13 @@ export const CollectionFragmentFragmentDoc = gql`
   series
   sticker
   condition
-  pictures
   remarks
   stocks
   price
   negotiable
+  photo {
+    url
+  }
 }
     `;
 export const CollectionsDocument = gql`

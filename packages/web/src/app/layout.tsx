@@ -4,7 +4,7 @@ import "@styles/globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import { Header } from "@components/Layout/Header";
-import theme from "../utils/theme";
+import theme from "@utils/theme";
 import { Footer } from "@components/Layout/Footer";
 import { Content } from "./Content";
 

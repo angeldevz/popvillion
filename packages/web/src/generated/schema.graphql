@@ -7,7 +7,7 @@ type Collection {
   id: ID
   name: String
   negotiable: Boolean
-  pictures: [String!]
+  photo: [Photo!]
   price: Int
   remarks: String
   series: String
@@ -18,4 +18,9 @@ type Collection {
 type Hello {
   collections: [Collection!]
   hello: String
+}
+
+type Photo {
+  id: ID
+  url: String
 }

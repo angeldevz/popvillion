@@ -7,8 +7,26 @@
     "outDir": "dist",
     "rootDir": "src",
     "moduleResolution": "node",
-    "types": ["node"],        
-    "resolveJsonModule": true
+    "types": [
+      "node"
+    ],
+    "resolveJsonModule": true,
+    "paths": {
+      "@core/*": [
+        "./src/core/*"
+      ],
+      "@graphql/*": [
+        "./src/graphql/*"
+      ],
+      "@db/*": [
+        "./src/db/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+    }
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ],
 }

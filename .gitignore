@@ -5,3 +5,4 @@ node_modules
 # sst
 .sst
 .env
+*.csv

@@ -4,14 +4,14 @@ fragment CollectionFragment on Collection {
   series
   sticker
   condition
-  pictures
   remarks
   stocks
   price
   negotiable
+  photo {
+    url
+  }
 }
-
-
 
 query collections {
   collections {

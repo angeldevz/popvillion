@@ -1,2 +1,2 @@
 import "./collections";
-import "./hello";
+import './hello';
