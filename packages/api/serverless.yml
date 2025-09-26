@@ -14,21 +14,13 @@ functions:
     url:
       cors:
         allowedOrigins:
-          - http://localhost:4000
-          - https://d3fu52h97rrvnu.cloudfront.net
+          - ${env:WEB_URL}
         allowedMethods:
           - GET
           - POST
         allowedHeaders:
           - Content-Type
           - Authorization
-    events:   # local dev with API Gateway emulation
-      - http:
-          path: graphql
-          method: post
-      - http:
-          path: graphql
-          method: get
 
 plugins:
   - serverless-offline
