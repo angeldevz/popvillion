@@ -13,24 +13,25 @@ provider:
 functions:
   graphql:
     handler: src/handler.graphqlHandler
-    url:
-      authType: NONE
-      cors:
-        allowedOrigins:
-          - https://d3fu52h97rrvnu.cloudfront.net
-        allowedHeaders:
-          - Content-Type
-          - Authorization
-        allowedMethods:
-          - GET
-          - POST
     events:
       - http:
           path: graphql
           method: post
+          cors:
+          origin: 'https://d3fu52h97rrvnu.cloudfront.net'
+          headers:
+            - Content-Type
+            - Authorization
+          allowCredentials: false
       - http:
           path: graphql
           method: get
+          cors:
+          origin: 'https://d3fu52h97rrvnu.cloudfront.net'
+          headers:
+            - Content-Type
+            - Authorization
+          allowCredentials: false
 
 plugins:
   - serverless-offline
