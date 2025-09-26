@@ -5,7 +5,7 @@ import { Photos } from "@core/photos";
 
 export const Collection = builder.objectType("Collection", {
   fields: (t) => ({
-    id: t.exposeID("id"),
+    id: t.exposeID("public_id"),
     name: t.exposeString("name"),
     series: t.exposeString("series"),
     sticker: t.exposeString("sticker"),

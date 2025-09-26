@@ -48,6 +48,9 @@ importers:
       '@eddeee888/gcg-operation-location-migration':
         specifier: ^0.1.0
         version: 0.1.0(graphql@16.11.0)
+      '@eslint/js':
+        specifier: ^9.36.0
+        version: 9.36.0
       '@graphql-cli/codegen':
         specifier: 3.0.4
         version: 3.0.4(@babel/core@7.28.4)(@types/node@20.19.17)(graphql-config@3.0.3)(graphql@16.11.0)(yargs@16.0.3)

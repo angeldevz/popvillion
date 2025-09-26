@@ -1,3 +1,4 @@
 .serverless
-dist
-drizzle
+dist/
+drizzle/
+*.tsbuildinfo

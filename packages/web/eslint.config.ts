@@ -22,6 +22,7 @@ export default [
       parser: tseslint.parser,
       parserOptions: {
         project: "./tsconfig.json",
+        tsconfigRootDir: __dirname,
       },
     },
     plugins: {

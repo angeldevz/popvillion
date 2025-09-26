@@ -6,7 +6,9 @@
   "packageManager": "pnpm@9.0.0",
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev"
+    "dev": "turbo run dev",
+    "check-types": "turbo run check-types",
+    "generate": "turbo run generate"
   },
   "devDependencies": {
     "@types/aws-lambda": "8.10.152",

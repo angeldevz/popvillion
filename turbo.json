@@ -6,21 +6,25 @@
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "deploy": {
-      "dependsOn": ["build"],   
-      "cache": false            
+      "dependsOn": ["build"],
+      "cache": false
     },
     "deploy:dev": {
-      "dependsOn": ["deploy"],  
+      "dependsOn": ["deploy"],
       "cache": false
     },
     "deploy:prod": {
-      "dependsOn": ["deploy"],  
+      "dependsOn": ["deploy"],
       "cache": false
     },
     "check-types": {
       "dependsOn": ["^check-types"]
     },
     "dev": {
+      "persistent": true,
+      "cache": false
+    },
+    "generate": {
       "persistent": true,
       "cache": false
     }

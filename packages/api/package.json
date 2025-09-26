@@ -7,7 +7,7 @@
     "deploy:dev": "serverless deploy --stage dev",
     "deploy:prod": "serverless deploy --stage prod",
     "dev": "nodemon --watch src --ext ts,js --exec 'ts-node -r tsconfig-paths/register src/server.ts'",
-    "check-types": "tsc --noEmit",
+    "check-types": "tsc --noEmit --incremental",
     "db:generate": "drizzle-kit generate",
     "db:push": "drizzle-kit push --strict --verbose",
     "db:migrate": "drizzle-kit migrate",
@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@eddeee888/gcg-operation-location-migration": "^0.1.0",
+    "@eslint/js": "^9.36.0",
     "@graphql-cli/codegen": "3.0.4",
     "@graphql-cli/coverage": "2.1.0",
     "@graphql-cli/diff": "2.1.0",

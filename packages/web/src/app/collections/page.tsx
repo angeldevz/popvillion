@@ -1,23 +1,8 @@
-"use client";
-import {
-  Box,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardHeader,
-  Chip,
-  Container,
-  List,
-  ListItem,
-  Typography,
-} from "@mui/material";
-import { useCollectionsQuery } from "@generated/index";
-import { PrimaryButton } from "@components/Button/PrimaryButton";
-import { Tag } from "@mui/icons-material";
+import { lazy, Suspense } from "react";
+import { Box, CircularProgress, Container, Typography } from "@mui/material";
+const Collections = lazy(() => import("./Collections"));
 
 export default function Page() {
-  const { data, loading, error } = useCollectionsQuery();
   return (
     <Container maxWidth="xl" sx={{ py: 4 }}>
       <Box sx={{ mb: 4, display: "flex", flexFlow: "column", gap: 4 }}>
@@ -40,65 +25,25 @@ export default function Page() {
           love? Make a friendly offer and let's chat!
         </Typography>
       </Box>
-      <Box sx={{ display: "flex", flexFlow: "column", gap: 4 }}>
-        <List
-          sx={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-          }}
-        >
-          {data?.collections?.map((collection) => (
-            <ListItem key={collection.id}>
-              <Card
-                variant="elevation"
-                sx={{
-                  width: "100%",
-                  height: "100%",
-                  p: 2,
-                  rounded: 8,
-                  display: "flex",
-                  flexFlow: "column",
-                  gap: 2,
-                  boxShadow: "primary.main",
-                }}
-              >
-                <CardHeader
-                  title={collection.name}
-                  subheader={collection.series}
-                />
-                <CardContent>
-                  {collection.sticker && (
-                    <Chip
-                      icon={<Tag />}
-                      label={collection.sticker}
-                      variant="outlined" // Or 'filled' for a solid background
-                    />
-                  )}
-                </CardContent>
-                <CardActions
-                  sx={{
-                    mt: "auto",
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  {collection.negotiable ? (
-                    <PrimaryButton>Send offer</PrimaryButton>
-                  ) : (
-                    <Button
-                      variant="contained"
-                      sx={{ backgroundColor: "success.dark" }}
-                    >
-                      Add to Cart
-                    </Button>
-                  )}
-                </CardActions>
-              </Card>
-            </ListItem>
-          ))}
-        </List>
-      </Box>
+      <Suspense
+        fallback={
+          <Box
+            sx={{
+              display: "flex",
+              flexFlow: "column",
+              gap: 4,
+              alignItems: "center",
+              mx: "auto",
+              my: 10,
+            }}
+          >
+            <CircularProgress color="inherit" />
+            <span>Loading all the collections...</span>
+          </Box>
+        }
+      >
+        <Collections />
+      </Suspense>
     </Container>
   );
 }

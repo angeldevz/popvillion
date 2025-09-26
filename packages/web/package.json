@@ -7,7 +7,7 @@
     "build": "ANALYZE=true next build --turbopack",
     "start": "next start",
     "lint": "eslint",
-    "check-types": "tsc --noEmit",
+    "check-types": "tsc --noEmit  --incremental",
     "analyze": "next analyze",
     "test": "jest",
     "test:watch": "jest --watch"
