@@ -13,6 +13,17 @@ provider:
 functions:
   graphql:
     handler: src/handler.graphqlHandler
+    url:
+      cors:
+        allowedOrigins:
+          - https://d3fu52h97rrvnu.cloudfront.net
+        allowedHeaders:
+          - Content-Type
+          - Authorization
+        allowedMethods:
+          - GET
+          - POST
+          - OPTIONS
     events:
       - http:
           path: graphql
