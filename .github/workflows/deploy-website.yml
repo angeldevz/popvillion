@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -35,27 +35,30 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ap-southeast-1
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         working-directory: ./packages/api
         run: |
-            # Run deploy, log everything to console, and also save it
-            # 2>&1 merges stderr into stdout so you can capture all logs together.
-            DEPLOY_OUTPUT=$(pnpm run deploy:prod 2>&1 | tee deploy.log)
+          # Run deploy, log everything to console, and also save it
+          # 2>&1 merges stderr into stdout so you can capture all logs together.
+          DEPLOY_OUTPUT=$(pnpm run deploy:prod 2>&1 | tee deploy.log)
 
-            echo "=== Full Deploy Output ==="
-            echo "$DEPLOY_OUTPUT"
+          echo "=== Full Deploy Output ==="
+          echo "$DEPLOY_OUTPUT"
 
-            # Extract the endpoint (assuming deploy logs contain 'POST - <url>')
-            ENDPOINT=$(echo "$DEPLOY_OUTPUT" | grep "POST -" | awk '{print $3}')
+          # Extract the endpoint (assuming deploy logs contain 'POST - <url>')
+          ENDPOINT=$(echo "$DEPLOY_OUTPUT" | grep "POST -" | awk '{print $3}')
 
-            echo "=== Extracted Endpoint ==="
-            echo "$ENDPOINT"
+          echo "=== Extracted Endpoint ==="
+          echo "$ENDPOINT"
 
-            # Export to env for next steps
-            echo "NEXT_PUBLIC_GRAPHQL_ENDPOINT=$ENDPOINT" >> $GITHUB_ENV
+          # Export to env for next steps
+          echo "NEXT_PUBLIC_GRAPHQL_ENDPOINT=$ENDPOINT" >> $GITHUB_ENV
 
       - name: Build Next.js
-        env: 
+        env:
           NEXT_PUBLIC_GRAPHQL_ENDPOINT: ${{ env.NEXT_PUBLIC_GRAPHQL_ENDPOINT }}
+          NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY }}
+          NEXT_PUBLIC_MAP_ID: ${{ secrets.NEXT_PUBLIC_MAP_ID }}
         run: |
           pnpm build
 

@@ -5,13 +5,14 @@
   "description": "e-commerce platform for my husband's funko pop collections",
   "packageManager": "pnpm@9.0.0",
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "check-types": "turbo run check-types",
-    "generate": "turbo run generate"
+    "build": "dotenv -e .env -- turbo run build",
+    "dev": "dotenv -e .env -- turbo run dev",
+    "check-types": "dotenv -e .env -- turbo run check-types",
+    "generate": "dotenv -e .env -- turbo run generate"
   },
   "devDependencies": {
     "@types/aws-lambda": "8.10.152",
+    "dotenv-cli": "^10.0.0",
     "turbo": "^2.5.6"
   }
 }

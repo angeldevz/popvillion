@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 import withBundleAnalyzer from "@next/bundle-analyzer";
 
+console.log(process.env.ANALYZE, process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT)
 const analyzer = withBundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
