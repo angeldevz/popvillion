@@ -7,7 +7,7 @@ export function GraphQLProvider({ children }: PropsWithChildren) {
     () =>
       new ApolloClient({
         link: new HttpLink({
-          uri: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT!, // replace with your GraphQL endpoint
+          uri: `${process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT!}/graphql`, // replace with your GraphQL endpoint
           headers: {
             // optional auth headers
             // Authorization: `Bearer ${token}`,
