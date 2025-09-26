@@ -54,8 +54,6 @@ jobs:
             echo "NEXT_PUBLIC_GRAPHQL_ENDPOINT=$ENDPOINT" >> $GITHUB_ENV
 
       - name: Build Next.js
-        env: 
-          NEXT_PUBLIC_GRAPHQL_ENDPOINT: $NEXT_PUBLIC_GRAPHQL_ENDPOINT
         run: |
           echo "Using endpoint: $NEXT_PUBLIC_GRAPHQL_ENDPOINT"
           pnpm build
