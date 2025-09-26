@@ -2,7 +2,10 @@ import type { APIGatewayProxyEventV2, Context } from "aws-lambda";
 import { createYoga } from "graphql-yoga";
 import { schema } from "@graphql/index";
 
-const yoga = createYoga({ schema, cors: false });
+const yoga = createYoga({
+  schema,
+  cors: false, // we handle CORS validation in serverless
+});
 
 export async function graphqlHandler(
   event: APIGatewayProxyEventV2,
