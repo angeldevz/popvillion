@@ -38,6 +38,7 @@ jobs:
         working-directory: ./packages/api
         run: |
             # Run deploy, log everything to console, and also save it
+            # 2>&1 merges stderr into stdout so you can capture all logs together.
             DEPLOY_OUTPUT=$(pnpm run deploy:prod 2>&1 | tee deploy.log)
 
             echo "=== Full Deploy Output ==="
@@ -56,6 +57,7 @@ jobs:
         env: 
           NEXT_PUBLIC_GRAPHQL_ENDPOINT: $NEXT_PUBLIC_GRAPHQL_ENDPOINT
         run: |
+          echo "Using endpoint: $NEXT_PUBLIC_GRAPHQL_ENDPOINT"
           pnpm build
 
       - name: Sync to S3

@@ -14,9 +14,10 @@ functions:
       - http:
           path: graphql
           method: post
-      - http:
-          path: graphql
-          method: get
 
 plugins:
   - serverless-offline
+
+custom:
+  serverless-offline:
+    httpPort: 4000   # Default: 3000
