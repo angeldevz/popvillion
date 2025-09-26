@@ -1,41 +1,36 @@
 service: graphql-lambda
-
-frameworkVersion: '~4.19.1' # disable auto-updates, lock to this version
+frameworkVersion: '4'
 
 provider:
   name: aws
   runtime: nodejs20.x
   region: ap-southeast-1
-  environment:
-    DATABASE_URL: ${env:DATABASE_URL}
-
 
 functions:
   graphql:
     handler: src/handler.graphqlHandler
-    events:
+    url:
+      cors:
+        allowedOrigins:
+          - http://localhost:4000
+          - https://d3fu52h97rrvnu.cloudfront.net
+        allowedMethods:
+          - GET
+          - POST
+        allowedHeaders:
+          - Content-Type
+          - Authorization
+    events:   # local dev with API Gateway emulation
       - http:
           path: graphql
           method: post
-          cors:
-          origin: 'https://d3fu52h97rrvnu.cloudfront.net'
-          headers:
-            - Content-Type
-            - Authorization
-          allowCredentials: false
       - http:
           path: graphql
           method: get
-          cors:
-          origin: 'https://d3fu52h97rrvnu.cloudfront.net'
-          headers:
-            - Content-Type
-            - Authorization
-          allowCredentials: false
 
 plugins:
   - serverless-offline
 
 custom:
   serverless-offline:
-    httpPort: 4000   # Default: 3000
+    httpPort: 4000
