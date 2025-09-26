@@ -29,11 +29,10 @@ export async function graphqlHandler(
     headers[key] = value;
   });
 
-  // Add explicit CORS for Function URL
-  headers["Access-Control-Allow-Origin"] =
-    "https://d3fu52h97rrvnu.cloudfront.net";
-  headers["Access-Control-Allow-Headers"] = "Content-Type,Authorization";
-  headers["Access-Control-Allow-Methods"] = "GET,POST,OPTIONS";
+  // // Add explicit CORS for Function URL
+  // headers["Access-Control-Allow-Origin"] = process.env.WEB_URL!;
+  // headers["Access-Control-Allow-Headers"] = "Content-Type,Authorization";
+  // headers["Access-Control-Allow-Methods"] = "GET,POST,OPTIONS";
 
   return {
     statusCode: response.status,
