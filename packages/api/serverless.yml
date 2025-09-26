@@ -23,7 +23,6 @@ functions:
         allowedMethods:
           - GET
           - POST
-          - OPTIONS
     events:
       - http:
           path: graphql
