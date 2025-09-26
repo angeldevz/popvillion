@@ -56,7 +56,7 @@ jobs:
       - name: Build Next.js
         run: |
           echo "Using endpoint: $NEXT_PUBLIC_GRAPHQL_ENDPOINT"
-          pnpm build
+          NEXT_PUBLIC_GRAPHQL_ENDPOINT=$NEXT_PUBLIC_GRAPHQL_ENDPOINT pnpm build
 
       - name: Sync to S3
         run: aws s3 sync ./packages/web/out s3://popvillion-website --delete
