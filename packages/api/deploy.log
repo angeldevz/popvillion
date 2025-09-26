@@ -1,0 +1,17 @@
+
+> @popvillion/api@1.0.0 deploy:prod /Users/rustancorpuz/repo/test-projects/popvillion/packages/api
+> serverless deploy --stage prod
+
+
+Deploying "graphql-lambda" to stage "prod" (ap-southeast-1)
+(node:22478) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:22478) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+✔ Service deployed to stack graphql-lambda-prod (31s)
+endpoints:
+  POST - https://fti29dya78.execute-api.ap-southeast-1.amazonaws.com/prod/graphql
+  GET - https://fti29dya78.execute-api.ap-southeast-1.amazonaws.com/prod/graphql
+
+functions:
+  graphql: graphql-lambda-prod-graphql (1.1 MB)
+

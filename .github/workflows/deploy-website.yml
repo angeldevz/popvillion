@@ -37,12 +37,20 @@ jobs:
           AWS_REGION: ap-southeast-1
         working-directory: ./packages/api
         run: |
-          DEPLOY_OUTPUT=$(pnpm run deploy:prod)
-          echo "Full deploy output:"
-          echo "$DEPLOY_OUTPUT"
-          ENDPOINT=$(echo "$DEPLOY_OUTPUT" | grep "POST -" | awk '{print $3}')
-          echo "Extracted endpoint: $ENDPOINT"
-          echo "NEXT_PUBLIC_GRAPHQL_ENDPOINT=$ENDPOINT" >> $GITHUB_ENV
+            # Run deploy, log everything to console, and also save it
+            DEPLOY_OUTPUT=$(pnpm run deploy:prod 2>&1 | tee deploy.log)
+
+            echo "=== Full Deploy Output ==="
+            echo "$DEPLOY_OUTPUT"
+
+            # Extract the endpoint (assuming deploy logs contain 'POST - <url>')
+            ENDPOINT=$(echo "$DEPLOY_OUTPUT" | grep "POST -" | awk '{print $3}')
+
+            echo "=== Extracted Endpoint ==="
+            echo "$ENDPOINT"
+
+            # Export to env for next steps
+            echo "NEXT_PUBLIC_GRAPHQL_ENDPOINT=$ENDPOINT" >> $GITHUB_ENV
 
       - name: Build Next.js
         env: 
