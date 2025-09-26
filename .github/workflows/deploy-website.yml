@@ -45,7 +45,7 @@ jobs:
             echo "$DEPLOY_OUTPUT"
 
             # Extract the endpoint (assuming deploy logs contain 'POST - <url>')
-            ENDPOINT=$(echo "$DEPLOY_OUTPUT" | grep "POST -" | awk '{print $3}')
+            ENDPOINT=$(echo "$DEPLOY_OUTPUT" | grep "POST -" | awk '{print $4}')
 
             echo "=== Extracted Endpoint ==="
             echo "$ENDPOINT"
