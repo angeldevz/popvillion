@@ -14,6 +14,7 @@ functions:
   graphql:
     handler: src/handler.graphqlHandler
     url:
+      authType: NONE
       cors:
         allowedOrigins:
           - https://d3fu52h97rrvnu.cloudfront.net
