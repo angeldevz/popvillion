@@ -38,12 +38,15 @@ jobs:
         working-directory: ./packages/api
         run: |
           DEPLOY_OUTPUT=$(pnpm run deploy:prod)
+          echo "Full deploy output:"
+          echo "$DEPLOY_OUTPUT"
           ENDPOINT=$(echo "$DEPLOY_OUTPUT" | grep "POST -" | awk '{print $3}')
+          echo "Extracted endpoint: $ENDPOINT"
           echo "NEXT_PUBLIC_GRAPHQL_ENDPOINT=$ENDPOINT" >> $GITHUB_ENV
 
       - name: Build Next.js
         env: 
-          NEXT_PUBLIC_GRAPHQL_ENDPOINT: ${{ env.NEXT_PUBLIC_GRAPHQL_ENDPOINT }}
+          NEXT_PUBLIC_GRAPHQL_ENDPOINT: $NEXT_PUBLIC_GRAPHQL_ENDPOINT
         run: |
           pnpm build
 
