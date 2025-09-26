@@ -63,7 +63,7 @@ const theme = createTheme({
       styleOverrides: {
         body: {
           margin: 0,
-          backgroundImage: "url('./background.jpg')",
+          backgroundImage: "url('/background.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
