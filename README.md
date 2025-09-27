@@ -25,7 +25,7 @@ Demo (WIP): https://d3fu52h97rrvnu.cloudfront.net/
 - GraphQL (Yoga)
 - Pothos
 - Typescript
-  
-SOON:
 - NeonDB (PostgreSQL)
+
+SOON:
 - MongoDB
