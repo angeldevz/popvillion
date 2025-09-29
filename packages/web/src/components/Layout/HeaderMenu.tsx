@@ -1,14 +1,26 @@
+"use client";
+import { useCart } from "@hooks/useCart";
 import { List, ListItem, Typography } from "@mui/material";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export function HeaderMenu() {
   const pathname = usePathname();
+  const { cart } = useCart();
 
   const headerMenu = [
     { name: "Home", href: "/" },
     { name: "Collections", href: "/collections" },
     { name: "Contact", href: "/contact" },
+    {
+      name: (
+        <span className="flex flex-row gap-2">
+          <span>Cart</span>
+          <span>({cart.length})</span>
+        </span>
+      ),
+      href: "/cart",
+    },
   ];
   return (
     <List
@@ -19,8 +31,8 @@ export function HeaderMenu() {
         fontWeight: "bold",
       }}
     >
-      {headerMenu.map((item) => (
-        <ListItem key={item.name}>
+      {headerMenu.map((item, index) => (
+        <ListItem key={index}>
           <Typography
             component={Link}
             href={item.href}

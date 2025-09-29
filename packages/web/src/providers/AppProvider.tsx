@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
-import { LayoutProvider } from "./LayoutProvider";
 import { GraphQLProvider } from "./GraphQLProvider";
+import { LayoutProvider } from "./LayoutProvider";
 
 export function AppProvider({ children }: PropsWithChildren) {
   return (

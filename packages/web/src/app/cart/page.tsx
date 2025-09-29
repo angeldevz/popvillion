@@ -1,7 +1,7 @@
 import { SuspenseLoading } from "@components/Loading";
 import { Box, Container, Typography } from "@mui/material";
 import { lazy } from "react";
-const Collections = lazy(() => import("./Collections"));
+const Basket = lazy(() => import("./Basket"));
 
 export default function Page() {
   return (
@@ -16,18 +16,17 @@ export default function Page() {
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          Collections
+          Basket
         </Typography>
         <Typography
           variant="subtitle1"
           sx={{ color: "text.secondary", fontSize: "1.2rem" }}
         >
-          Take a joyful stroll through our shelf of favorites. See something you
-          love? Make a friendly offer and let's chat!
+          Oh! You have items in your basket. Take a look!
         </Typography>
       </Box>
-      <SuspenseLoading label="Loading all the collections...">
-        <Collections />
+      <SuspenseLoading label="Loading basket...">
+        <Basket />
       </SuspenseLoading>
     </Container>
   );
