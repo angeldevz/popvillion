@@ -8,7 +8,8 @@
     "build": "dotenv -e .env -- turbo run build",
     "dev": "dotenv -e .env -- turbo run dev",
     "check-types": "dotenv -e .env -- turbo run check-types",
-    "generate": "dotenv -e .env -- turbo run generate"
+    "generate": "dotenv -e .env -- turbo run generate",
+    "lint": "dotenv -e .env -- turbo run lint"
   },
   "devDependencies": {
     "@types/aws-lambda": "8.10.152",

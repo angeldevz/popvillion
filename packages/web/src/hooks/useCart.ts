@@ -37,9 +37,4 @@ export const useCart = create<CartStore>()(
   )
 );
 
-// Sync across tabs
-window.addEventListener("storage", (event) => {
-  if (event.key === "cart-store") {
-    useCart.persist.rehydrate(); // re-read from localStorage
-  }
-});
+

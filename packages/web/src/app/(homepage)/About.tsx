@@ -1,7 +1,5 @@
 "use client";
 import { Box, Typography } from "@mui/material";
-import { lazy } from "react";
-const Collections = lazy(() => import("./Collections"));
 
 export default function Featured() {
   return (
@@ -26,10 +24,10 @@ export default function Featured() {
           textAlign: { xs: "center", md: "left" },
         }}
       >
-        About
+        About Us
       </Typography>
       <Typography variant="body1">
-        Welcome to my personal treasure trove! This is my carefully curated
+        Welcome to our personal treasure trove! This is my carefully curated
         collection of Funko Pops, anime figures, and collectibles that I've
         gathered with love over the years.
       </Typography>

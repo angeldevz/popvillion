@@ -2,8 +2,11 @@
   "$schema": "https://turborepo.com/schema.json",
   "globalEnv": ["WEB_URL", "DATABASE_URL", "NEXT_PUBLIC_GRAPHQL_ENDPOINT"],
   "tasks": {
+    "lint": {
+      "cache": false
+    },
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["lint", "^build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "deploy": {
