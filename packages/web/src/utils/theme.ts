@@ -12,9 +12,9 @@ const theme = createTheme({
       contrastText: "#FFFFFF",
     },
     secondary: {
-      main: "#B71C1C", // Deadpool crimson
-      light: "#e53935",
-      dark: "#7f0000",
+      main: "#2ECC71", // Joker green
+      light: "#58d68d",
+      dark: "#1e8449",
       contrastText: "#FFFFFF",
     },
     success: {
@@ -43,7 +43,7 @@ const theme = createTheme({
     },
     background: {
       default: "#121212", // dark neutral background
-      paper: "#1E1E1E",
+      paper: "rgba(255, 255, 255, 0.1)",
     },
     text: {
       primary: "#FFFFFF",

@@ -1,7 +1,7 @@
-import { Collection } from "@core/collections/collections.sql";
+import { CollectionItem } from "@core/collections/collections.sql";
 import { Photo } from "@core/photos/photos.sql";
 
 export interface Objects {
-  Collection: Collection;
+  CollectionItem: CollectionItem;
   Photo: Photo;
 }

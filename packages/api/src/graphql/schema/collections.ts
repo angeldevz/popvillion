@@ -1,9 +1,9 @@
 import { Collections } from "@core/collections";
+import { Photos } from "@core/photos";
 import { builder } from "../builder";
 import { Photo } from "./photos";
-import { Photos } from "@core/photos";
 
-export const Collection = builder.objectType("Collection", {
+export const CollectionItem = builder.objectType("CollectionItem", {
   fields: (t) => ({
     id: t.exposeID("public_id"),
     name: t.exposeString("name"),
@@ -25,9 +25,18 @@ export const Collection = builder.objectType("Collection", {
 
 builder.queryField("collections", (t) =>
   t.field({
-    type: [Collection],
+    type: [CollectionItem],
     async resolve() {
       return Collections.all();
+    },
+  })
+);
+
+builder.queryField("featured", (t) =>
+  t.field({
+    type: [CollectionItem],
+    async resolve() {
+      return Collections.featured();
     },
   })
 );

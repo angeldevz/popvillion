@@ -27,7 +27,7 @@ export default function Page() {
             mb: 4,
           }}
         >
-          Contact us
+          Connect
         </Typography>
         <Typography
           variant="subtitle1"
@@ -44,6 +44,10 @@ export default function Page() {
         >
           Message us
         </Button>
+        <Typography variant="subtitle1" sx={{ color: "text.secondary" }}>
+          {" "}
+        </Typography>
+        Follow us for updates on new arrivals and exclusive deals!
       </Box>
       <Box
         sx={{

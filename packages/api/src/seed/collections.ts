@@ -1,12 +1,12 @@
-import { createReadStream } from "fs";
-import path from "path";
-import csv from "csv-parser";
 import {
-  Collection,
+  CollectionItem,
   collectionsTable,
   Condition,
 } from "@core/collections/collections.sql";
 import { db } from "@db/index";
+import csv from "csv-parser";
+import { createReadStream } from "fs";
+import path from "path";
 
 interface FormData {
   Timestamp: string | null;
@@ -19,8 +19,8 @@ interface FormData {
   Price: string;
 }
 
-type FormDataResult = Partial<Collection> &
-  Pick<Collection, "name" | "condition">;
+type FormDataResult = Partial<CollectionItem> &
+  Pick<CollectionItem, "name" | "condition">;
 
 export async function collectionsSeeder() {
   const results: FormDataResult[] = [];

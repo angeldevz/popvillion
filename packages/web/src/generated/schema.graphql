@@ -1,8 +1,4 @@
-schema {
-  query: Hello
-}
-
-type Collection {
+type CollectionItem {
   condition: String
   id: ID
   name: String
@@ -15,12 +11,13 @@ type Collection {
   stocks: Int
 }
 
-type Hello {
-  collections: [Collection!]
-  hello: String
-}
-
 type Photo {
   id: ID
   url: String
+}
+
+type Query {
+  _health: Boolean
+  collections: [CollectionItem!]
+  featured: [CollectionItem!]
 }

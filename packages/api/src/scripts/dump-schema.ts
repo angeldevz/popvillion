@@ -1,6 +1,12 @@
 // scripts/dump-schema.ts
-import { writeFileSync } from "fs";
-import { printSchema } from "graphql";
 import { schema } from "@graphql/index"; // import your backend's schema
+import { mkdirSync, writeFileSync } from "fs";
+import { printSchema } from "graphql";
+import path from "path";
 
-writeFileSync("../web/src/generated/schema.graphql", printSchema(schema));
+const outPath = "../web/src/generated/schema.graphql";
+
+console.log(outPath);
+// make sure the directory exists
+mkdirSync(path.dirname(outPath), { recursive: true });
+writeFileSync(outPath, printSchema(schema));

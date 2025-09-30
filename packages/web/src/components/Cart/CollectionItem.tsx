@@ -1,10 +1,14 @@
 "use client";
-import { PrimaryButton } from "@components/Button/PrimaryButton";
-import { CollectionFragmentFragment } from "@generated/index";
+import {
+  LightButton,
+  PremiumButton,
+  SecondaryButton,
+} from "@components/Button/PrimaryButton";
+import { CollectionItemFragmentFragment } from "@generated/index";
 import { useCart } from "@hooks/useCart";
 import { Tag } from "@mui/icons-material";
+import CheckIcon from "@mui/icons-material/Check";
 import {
-  Button,
   Card,
   CardActions,
   CardContent,
@@ -15,11 +19,12 @@ import {
 import { useEffect, useState } from "react";
 
 interface Props {
-  collection: CollectionFragmentFragment;
+  collection: CollectionItemFragmentFragment;
 }
 
-export function Collection({ collection }: Props) {
-  const { addToCart, cart } = useCart();
+export function CollectionItem({ collection }: Props) {
+  const cart = useCart((state) => state.cart);
+  const addToCart = useCart((state) => state.addToCart);
 
   const [isAdded, setIsAdded] = useState(false);
 
@@ -40,25 +45,18 @@ export function Collection({ collection }: Props) {
           width: "100%",
           height: "100%",
           p: 2,
-          rounded: 8,
           display: "flex",
           flexFlow: "column",
-          gap: 2,
-          boxShadow: "primary.main",
+          backgroundColor: "rgba(106, 13, 173, 0.15)", // Joker purple tint or // gold tint
+          backdropFilter: "blur(30px)", // keeps the glassy look consistent
+          borderRadius: 3,
+          border: "1px solid rgba(255,255,255,0.1)",
+          "&:hover": {
+            backgroundColor: "rgba(106, 13, 173, 0.25)", // stronger tint on hover
+          },
         }}
       >
-        <CardHeader
-          title={collection.name}
-          subheader={collection.series}
-          //   action={
-          //     <IconButton
-          //       aria-label="remove"
-          //       onClick={() => removeCollection(collection)}
-          //     >
-          //       <TrashIcon />
-          //     </IconButton>
-          //   }
-        />
+        <CardHeader title={collection.name} subheader={collection.series} />
         <CardContent>
           {collection.sticker && (
             <Chip
@@ -77,19 +75,13 @@ export function Collection({ collection }: Props) {
           }}
         >
           {isAdded ? (
-            <Button variant="contained" disabled>
-              Added!
-            </Button>
+            <LightButton endIcon={<CheckIcon />}>Added!</LightButton>
           ) : collection.negotiable ? (
-            <PrimaryButton>Send offer</PrimaryButton>
+            <PremiumButton>Send offer</PremiumButton>
           ) : (
-            <Button
-              variant="contained"
-              sx={{ backgroundColor: "success.dark" }}
-              onClick={add}
-            >
+            <SecondaryButton variant="contained" onClick={add}>
               Add to Cart
-            </Button>
+            </SecondaryButton>
           )}
         </CardActions>
       </Card>

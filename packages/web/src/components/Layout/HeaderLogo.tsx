@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import Image from "next/image";
-import Logo from "./logo-circle.png";
 import Characters from "./characters.png";
+import Logo from "./logo-circle.png";
 
 export function HeaderLogo() {
   return (

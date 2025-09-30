@@ -1,13 +1,12 @@
+import { createdAt, deletedAt, id, publicId, updatedAt } from "@utils/sql";
+import { InferSelectModel } from "drizzle-orm";
 import {
   boolean,
   integer,
   pgTable,
-  text,
   uniqueIndex,
   varchar,
 } from "drizzle-orm/pg-core";
-import { createdAt, deletedAt, id, publicId, updatedAt } from "@utils/sql";
-import { InferSelectModel } from "drizzle-orm";
 
 export type Condition = "Mint" | "Near Mint" | "7 to 8" | "Bad Box";
 
@@ -32,4 +31,4 @@ export const collectionsTable = pgTable(
   (table) => [uniqueIndex("collections_public_id_idx").on(table.public_id)]
 );
 
-export type Collection = InferSelectModel<typeof collectionsTable>;
+export type CollectionItem = InferSelectModel<typeof collectionsTable>;

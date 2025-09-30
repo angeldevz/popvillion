@@ -1,5 +1,4 @@
-import { Box, Container } from "@mui/material";
-import Link from "next/link";
+import { Box, Container, Link } from "@mui/material";
 
 export function Footer() {
   return (
@@ -15,18 +14,19 @@ export function Footer() {
           color: "text.secondary",
         }}
       >
-          <span>© {new Date().getFullYear()} Marco Collectibles.</span>
-          <span>
-            Curated by{" "}
-            <Link
-              href="https://www.facebook.com/AtomicSiopaoTv"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline text-primary"
-            >
-              AtomicSiopaoTV.
-            </Link>
-          </span>
+        <span>© {new Date().getFullYear()} Marco Collectibles.</span>
+        <span>
+          Curated by{" "}
+          <Link
+            href="https://www.facebook.com/AtomicSiopaoTv"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="secondary"
+            className="underline-offset-4"
+          >
+            AtomicSiopaoTV.
+          </Link>
+        </span>
       </Container>
     </Box>
   );

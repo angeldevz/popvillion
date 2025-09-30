@@ -1,7 +1,9 @@
 "use client";
+import { PremiumButton } from "@components/Button/PrimaryButton";
+import { CollectionItem } from "@components/Cart/CollectionItem";
 import { useCollectionsSuspenseQuery } from "@generated/index";
 import { Box, List, ListItem } from "@mui/material";
-import { Collection } from "./Collection";
+import Link from "next/link";
 
 export default function Collections() {
   const { data } = useCollectionsSuspenseQuery();
@@ -15,10 +17,18 @@ export default function Collections() {
       >
         {data?.collections?.map((collection) => (
           <ListItem key={collection.id}>
-            <Collection collection={collection} />
+            <CollectionItem collection={collection} />
           </ListItem>
         ))}
       </List>
+
+      <PremiumButton
+        href="/cart/"
+        LinkComponent={Link}
+        sx={{ alignSelf: "center" }}
+      >
+        Go to Basket
+      </PremiumButton>
     </Box>
   );
 }

@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import Page from "../src/app/page";
+import Page from "../src/app/(homepage)/page";
 
 describe("Page", () => {
   it("renders above the fold content", () => {
@@ -14,5 +14,4 @@ describe("Page", () => {
     const cta = screen.getByRole("button", { name: "Shop Now" });
     expect(cta).toBeInTheDocument();
   });
-  
 });

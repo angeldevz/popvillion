@@ -14,6 +14,9 @@ export function HeaderText() {
           color: "inherit",
           fontWeight: 700,
           fontSize: "1.5rem",
+          "&:hover": {
+            color: "rgba(46, 204, 113, 0.7)", // darker @ 70% for hover
+          },
         }}
       >
         Atomic Siopao

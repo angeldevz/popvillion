@@ -33,9 +33,9 @@ const config: Config = {
 
         // Deadpool palette
         secondary: {
-          DEFAULT: "#B71C1C", // Deadpool crimson
-          light: "#e53935",
-          dark: "#7f0000",
+          DEFAULT: "#2ECC71", // Joker green
+          light: "#58d68d",
+          dark: "#1e8449",
         },
         info: {
           DEFAULT: "#B0BEC5", // Deadpool steel gray

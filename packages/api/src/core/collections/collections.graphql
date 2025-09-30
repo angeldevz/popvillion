@@ -1,4 +1,4 @@
-fragment CollectionFragment on Collection {
+fragment CollectionItemFragment on CollectionItem {
   id
   name
   series
@@ -15,6 +15,12 @@ fragment CollectionFragment on Collection {
 
 query collections {
   collections {
-    ...CollectionFragment
+    ...CollectionItemFragment
+  }
+}
+
+query featured {
+  featured {
+    ...CollectionItemFragment
   }
 }

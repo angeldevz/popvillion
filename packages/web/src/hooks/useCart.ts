@@ -1,15 +1,15 @@
-import { CollectionFragmentFragment } from "@generated/index";
+import { CollectionItemFragmentFragment } from "@generated/index";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 export type CartState = {
-  cart: CollectionFragmentFragment[];
+  cart: CollectionItemFragmentFragment[];
 };
 
 export type CartActions = {
-  setCart: (cart: CollectionFragmentFragment[]) => void;
-  addToCart: (item: CollectionFragmentFragment) => void;
-  removeFromCart: (item: CollectionFragmentFragment) => void;
+  setCart: (cart: CollectionItemFragmentFragment[]) => void;
+  addToCart: (item: CollectionItemFragmentFragment) => void;
+  removeFromCart: (item: CollectionItemFragmentFragment) => void;
 };
 
 export type CartStore = CartState & CartActions;
@@ -18,15 +18,14 @@ export const defaultCartState: CartState = {
   cart: [],
 };
 
-export const useCart = create(
-  persist<CartStore>(
-    (set, get) => ({
+export const useCart = create<CartStore>()(
+  persist(
+    (set) => ({
       ...defaultCartState,
-      total: () => get().cart.reduce((acc, item) => acc + (item.price ?? 0), 0),
-      setCart: (cart: CollectionFragmentFragment[]) => set({ cart }),
-      addToCart: (item: CollectionFragmentFragment) =>
+      setCart: (cart: CollectionItemFragmentFragment[]) => set({ cart }),
+      addToCart: (item: CollectionItemFragmentFragment) =>
         set((state) => ({ cart: [...state.cart, item] })),
-      removeFromCart: (item: CollectionFragmentFragment) =>
+      removeFromCart: (item: CollectionItemFragmentFragment) =>
         set((state) => ({
           cart: state.cart.filter((c) => c.id !== item.id),
         })),
@@ -37,3 +36,10 @@ export const useCart = create(
     }
   )
 );
+
+// Sync across tabs
+window.addEventListener("storage", (event) => {
+  if (event.key === "cart-store") {
+    useCart.persist.rehydrate(); // re-read from localStorage
+  }
+});

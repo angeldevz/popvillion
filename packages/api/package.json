@@ -14,7 +14,7 @@
     "db:rollback": "drizzle-kit rollback",
     "db:seed": "tsx src/seed/index.ts",
     "schema:dump": "tsx src/scripts/dump-schema.ts",
-    "codegen": "graphql-codegen --config codegen.ts",
+    "codegen": "graphql-codegen --config codegen.ts --verbose",
     "generate": "pnpm schema:dump && pnpm codegen"
   },
   "dependencies": {

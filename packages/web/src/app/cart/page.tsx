@@ -1,7 +1,5 @@
-import { SuspenseLoading } from "@components/Loading";
 import { Box, Container, Typography } from "@mui/material";
-import { lazy } from "react";
-const Basket = lazy(() => import("./Basket"));
+import Basket from "./Basket";
 
 export default function Page() {
   return (
@@ -25,9 +23,7 @@ export default function Page() {
           Oh! You have items in your basket. Take a look!
         </Typography>
       </Box>
-      <SuspenseLoading label="Loading basket...">
-        <Basket />
-      </SuspenseLoading>
+      <Basket />
     </Container>
   );
 }
