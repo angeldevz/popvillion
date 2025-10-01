@@ -1,6 +1,11 @@
+import { FloatingButton } from "@components/Button/FloatingButton";
+import {
+  SectionAlternate,
+  SectionATF,
+  SectionPlain,
+} from "@components/Layout/Section";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
-import { Container, Fab } from "@mui/material";
-import Link from "next/link";
+import { Container } from "@mui/material";
 import About from "./About";
 import { ATF } from "./ATF";
 import Featured from "./Featured";
@@ -12,49 +17,18 @@ export default function Page() {
       maxWidth={false}
       sx={{ py: 4, display: "flex", flexFlow: "column", gap: 4, width: "100%" }}
     >
-      <Container
-        component={"section"}
-        maxWidth="xl"
-        sx={{ minHeight: "80vh", width: "100%" }}
-      >
+      <SectionATF>
         <ATF />
-        <Fab
-          color="info"
-          aria-label="go to feature"
-          href="#feature"
-          LinkComponent={Link}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce"
-        >
+        <FloatingButton aria-label="go to feature" href="#feature">
           <AutoAwesomeIcon />
-        </Fab>
-      </Container>
-      <Container
-        component={"section"}
-        disableGutters
-        maxWidth={false}
-        sx={{
-          minHeight: "100vh",
-          width: "100%",
-          py: 10,
-          backgroundColor: "background.paper",
-          backdropFilter: "blur(50px)",
-          border: 1,
-          borderColor: "background.paper",
-        }}
-      >
+        </FloatingButton>
+      </SectionATF>
+      <SectionAlternate>
         <About />
-      </Container>
-      <Container
-        id="feature"
-        component={"section"}
-        sx={{
-          minHeight: "100vh",
-          width: "100%",
-          py: 10,
-        }}
-      >
+      </SectionAlternate>
+      <SectionPlain>
         <Featured />
-      </Container>
+      </SectionPlain>
     </Container>
   );
 }

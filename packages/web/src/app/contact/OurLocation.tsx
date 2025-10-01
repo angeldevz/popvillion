@@ -1,8 +1,8 @@
 "use client";
-import { AdvancedMarker, APIProvider, Map } from "@vis.gl/react-google-maps";
-import LocationIcon from "./characters.ico";
-import Image from "next/image";
 import { Box, Typography } from "@mui/material";
+import { AdvancedMarker, APIProvider, Map } from "@vis.gl/react-google-maps";
+import Image from "next/image";
+import LocationIcon from "./characters.ico";
 
 const CambridgeLocation = {
   lat: 14.5674852,
@@ -41,6 +41,7 @@ export function OurLocation() {
           zoom={15}
           style={{ width: "100%", height: "50vh" }}
           mapId={process.env.NEXT_PUBLIC_MAP_ID}
+          colorScheme="DARK"
         >
           <AdvancedMarker position={CambridgeLocation}>
             <Image
