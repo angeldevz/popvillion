@@ -68,13 +68,21 @@ export default function About() {
             sx={{
               padding: 4,
               borderRadius: 3,
-              backgroundColor: "primary.dark",
+              background: "linear-gradient(145deg, #4a0879 0%, #6a0dad 100%)",
               display: "flex",
               flexFlow: "column",
               gap: 2,
+              boxShadow: "0 4px 12px rgba(0,0,0,0.5)",
+              transition: "all 0.2s ease",
+              "&:hover": {
+                filter: "brightness(1.1)", // subtle hover effect
+                transform: "translateY(-2px)",
+              },
             }}
           >
-            <Typography variant="h3">{item.title}</Typography>
+            <Typography variant="h3" sx={{ fontWeight: 600 }}>
+              {item.title}
+            </Typography>
             <Typography variant="subtitle2">{item.description}</Typography>
           </Card>
         ))}
