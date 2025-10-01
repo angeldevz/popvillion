@@ -1,9 +1,9 @@
 "use client";
 
+import useWindowSize from "@hooks/useWindowSize";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Box, Drawer, IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
-import useWindowSize from "@hooks/useWindowSize";
 import { HeaderMenu } from "./HeaderMenu";
 import { HeaderText } from "./HeaderText";
 
@@ -22,12 +22,26 @@ export function DrawerMenu() {
   }
 
   return (
-    <Box sx={{ display: { xs: "block", md: "none" } }}>
+    <Box
+      sx={{
+        display: { xs: "block", md: "none" },
+      }}
+    >
       <IconButton onClick={toggle}>
         <MenuIcon />
       </IconButton>
       <Drawer open={isOpen} onClose={toggle} anchor="left">
-        <Box sx={{ display: "flex", flexDirection: "column", p: 2, gap: 4 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            p: 2,
+            gap: 4,
+
+            zIndex: 100,
+            background: "background.main",
+          }}
+        >
           <HeaderText />
           <HeaderMenu />
         </Box>

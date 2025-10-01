@@ -2,6 +2,23 @@
 // theme.ts
 import { createTheme } from "@mui/material/styles";
 
+declare module "@mui/material/styles" {
+  interface Palette {
+    customBackground: {
+      main: string;
+      light: string;
+      dark: string;
+    };
+  }
+  interface PaletteOptions {
+    customBackground?: {
+      main?: string;
+      light?: string;
+      dark?: string;
+    };
+  }
+}
+
 const theme = createTheme({
   palette: {
     mode: "dark", // fits both Joker's chaos and Deadpool's edginess
@@ -43,7 +60,12 @@ const theme = createTheme({
     },
     background: {
       default: "#121212", // dark neutral background
-      paper: "rgba(255, 255, 255, 0.1)",
+      paper: "#1E1E1E",
+    },
+    customBackground: {
+      main: "rgba(255, 255, 255, 0.1)",
+      light: "rgba(255, 255, 255, 0.5)",
+      dark: "rgba(0, 0, 0, 0.5)",
     },
     text: {
       primary: "#FFFFFF",

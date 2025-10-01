@@ -45,9 +45,9 @@ export default function Basket() {
   ];
 
   return (
-    <TableContainer>
-      <Table size="medium" stickyHeader>
-        <TableHead>
+    <TableContainer sx={{ borderRadius: 3 }}>
+      <Table size="medium">
+        <TableHead sx={{ backgroundColor: "customBackground.dark" }}>
           <TableRow>
             {header.map((item) => (
               <TableCell
@@ -56,7 +56,6 @@ export default function Basket() {
                   fontSize: "1.2rem",
                   fontWeight: 600,
                   width: item.width,
-                  backgroundColor: "background.main",
                 }}
               >
                 {item.label}
@@ -64,7 +63,13 @@ export default function Basket() {
             ))}
           </TableRow>
         </TableHead>
-        <TableBody>
+        <TableBody
+          sx={{
+            backgroundColor: "customBackground.dark",
+            p: 2,
+            borderRadius: 3,
+          }}
+        >
           {cart.map((item) => (
             <TableRow key={item.id}>
               <TableCell padding="checkbox">

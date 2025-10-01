@@ -30,10 +30,10 @@ export function SectionAlternate({
         minHeight: "100vh",
         width: "100%",
         py: 10,
-        backgroundColor: "background.paper",
+        backgroundColor: "customBackground.main",
         backdropFilter: "blur(50px)",
         border: 1,
-        borderColor: "background.paper",
+        borderColor: "customBackground.main",
       }}
       {...rest}
     >

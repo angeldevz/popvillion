@@ -30,6 +30,7 @@ export default function About() {
         flexFlow: "column",
         flexWrap: "wrap",
         gap: 4,
+        p: 4,
         alignItems: "center",
         justifyContent: "center",
       }}
