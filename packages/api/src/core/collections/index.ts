@@ -2,14 +2,14 @@ import { db } from "@db/index";
 import { and, eq, isNull } from "drizzle-orm";
 import { collectionsTable } from "./collections.sql";
 
-export const all = () => {
+export const all = async () => {
   return db
     .select()
     .from(collectionsTable)
     .where(isNull(collectionsTable.deleted_at));
 };
 
-export const featured = () => {
+export const featured = async () => {
   return db
     .select()
     .from(collectionsTable)
@@ -21,7 +21,7 @@ export const featured = () => {
     );
 };
 
-export const fromName = (name: string) => {
+export const fromName = async (name: string) => {
   return db
     .select()
     .from(collectionsTable)

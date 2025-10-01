@@ -19,6 +19,7 @@ export default function Featured() {
         flexWrap: "wrap",
         gap: 4,
         alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <Typography

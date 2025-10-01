@@ -1,18 +1,37 @@
 "use client";
-import { Box, Typography } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
 
-export default function Featured() {
+export default function About() {
+  const data = [
+    {
+      title: "Personal Collection",
+      description:
+        "These are pieces from my own collection, carefully selected and maintained. Each item has been part of my journey as a collector.",
+    },
+    {
+      title: "Open to Discussion",
+      description:
+        "While these items are special to me, some may be available for the right home. Feel free to reach out and let's have a friendly chat!",
+    },
+    {
+      title: "Collector to Collector",
+      description:
+        "I understand the joy of collecting! Whether you're interested in purchasing or just want to chat about our shared hobby, I'm here.",
+    },
+  ];
   return (
     <Box
       maxWidth={"lg"}
       sx={{
         minHeight: "70vh",
         width: "100%",
+        mx: "auto",
         display: "flex",
         flexFlow: "column",
         flexWrap: "wrap",
         gap: 4,
         alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <Typography
@@ -31,6 +50,35 @@ export default function Featured() {
         collection of Funko Pops, anime figures, and collectibles that I've
         gathered with love over the years.
       </Typography>
+
+      <Box
+        sx={{
+          py: 4,
+          mx: "auto",
+          width: "100%",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+          gap: 4,
+        }}
+      >
+        {data.map((item, index) => (
+          <Card
+            variant="outlined"
+            key={index}
+            sx={{
+              padding: 4,
+              borderRadius: 3,
+              backgroundColor: "primary.dark",
+              display: "flex",
+              flexFlow: "column",
+              gap: 2,
+            }}
+          >
+            <Typography variant="h3">{item.title}</Typography>
+            <Typography variant="subtitle2">{item.description}</Typography>
+          </Card>
+        ))}
+      </Box>
     </Box>
   );
 }

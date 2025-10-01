@@ -1,6 +1,7 @@
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import { Container, Fab } from "@mui/material";
 import Link from "next/link";
+import About from "./About";
 import { ATF } from "./ATF";
 import Featured from "./Featured";
 
@@ -28,7 +29,6 @@ export default function Page() {
         </Fab>
       </Container>
       <Container
-        id="feature"
         component={"section"}
         disableGutters
         maxWidth={false}
@@ -41,7 +41,17 @@ export default function Page() {
           border: 1,
           borderColor: "background.paper",
         }}
-        // className="backdrop-blur-md border border-white/10"
+      >
+        <About />
+      </Container>
+      <Container
+        id="feature"
+        component={"section"}
+        sx={{
+          minHeight: "100vh",
+          width: "100%",
+          py: 10,
+        }}
       >
         <Featured />
       </Container>

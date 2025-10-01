@@ -52,9 +52,14 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    h1: { fontWeight: 700, color: "#6A0DAD" }, // Joker purple
-    h2: { fontWeight: 600, color: "#B71C1C" }, // Deadpool crimson
-    h3: { fontWeight: 500, color: "#2ECC71" }, // Joker green
+    h1: { fontSize: "2.5rem", fontWeight: 700, color: "#6A0DAD" }, // Joker purple
+    h2: { fontSize: "2rem", fontWeight: 600, color: "#B71C1C" }, // Deadpool crimson
+    h3: { fontSize: "1.8rem", fontWeight: 500, color: "#2ECC71" }, // Joker green
+    h4: { fontSize: "1.6rem" },
+    h5: { fontSize: "1.2rem" },
+    h6: { fontSize: "1rem" },
+    subtitle1: { fontSize: ".8rem" },
+    subtitle2: { fontSize: ".8rem" },
     body1: { color: "#FFFFFF" },
     body2: { color: "#B0BEC5" },
   },

@@ -1,8 +1,8 @@
 import { db } from "@db/index";
-import { photosTable } from "./photos.sql";
 import { eq } from "drizzle-orm";
+import { photosTable } from "./photos.sql";
 
-export const fromCollectionId = (collectionId: string) => {
+export const fromCollectionId = async (collectionId: string) => {
   return db
     .select()
     .from(photosTable)
