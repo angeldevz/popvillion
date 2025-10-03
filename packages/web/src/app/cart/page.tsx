@@ -18,10 +18,7 @@ export default function Page() {
           >
             Basket
           </Typography>
-          <Typography
-            variant="subtitle1"
-            sx={{ color: "text.secondary", fontSize: "1.2rem" }}
-          >
+          <Typography variant="subtitle1" sx={{ fontSize: "1.2rem" }}>
             Oh! You have items in your basket. Take a look!
           </Typography>
         </Box>

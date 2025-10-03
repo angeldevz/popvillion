@@ -44,7 +44,7 @@ export function ATF() {
         <Typography
           component={"h2"}
           variant="subtitle1"
-          sx={{ color: "text.secondary", fontSize: "1.2rem" }}
+          sx={{ fontSize: "1.2rem" }}
         >
           A happy little vault of fun collectibles, from Funko Pops to quirky
           treasures! Someday, these cuties might be up for adoption. 🌟

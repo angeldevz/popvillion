@@ -20,10 +20,7 @@ export default function Page() {
           >
             Collections
           </Typography>
-          <Typography
-            variant="subtitle1"
-            sx={{ color: "text.secondary", fontSize: "1.2rem" }}
-          >
+          <Typography variant="subtitle1" sx={{ fontSize: "1.2rem" }}>
             Take a joyful stroll through our shelf of favorites. See something
             you love? Make a friendly offer and let's chat!
           </Typography>

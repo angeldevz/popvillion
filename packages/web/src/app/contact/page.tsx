@@ -29,10 +29,7 @@ export default function Page() {
             >
               Connect
             </Typography>
-            <Typography
-              variant="subtitle1"
-              sx={{ color: "text.secondary", fontSize: "1.2rem" }}
-            >
+            <Typography variant="subtitle1" sx={{ fontSize: "1.2rem" }}>
               See something you love? Make a friendly offer and let's chat!
             </Typography>
             <Button
@@ -44,10 +41,10 @@ export default function Page() {
             >
               Message us
             </Button>
-            <Typography variant="subtitle1" sx={{ color: "text.secondary" }}>
-              {" "}
+            <Typography variant="subtitle1" sx={{ fontSize: "1rem" }}>
+              Follow us for updates on new arrivals and exclusive deals!
             </Typography>
-            Follow us for updates on new arrivals and exclusive deals!
+            
           </Box>
           <Box
             sx={{

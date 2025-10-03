@@ -10,6 +10,7 @@ export type CartActions = {
   setCart: (cart: CollectionItemFragmentFragment[]) => void;
   addToCart: (item: CollectionItemFragmentFragment) => void;
   removeFromCart: (item: CollectionItemFragmentFragment) => void;
+  removeFromCartById: (item: string) => void;
 };
 
 export type CartStore = CartState & CartActions;
@@ -29,6 +30,10 @@ export const useCart = create<CartStore>()(
         set((state) => ({
           cart: state.cart.filter((c) => c.id !== item.id),
         })),
+      removeFromCartById: (id: string) =>
+        set((state) => ({
+          cart: state.cart.filter((c) => c.id !== id),
+        })),
       clearCart: () => set({ cart: [] }),
     }),
     {
@@ -36,5 +41,3 @@ export const useCart = create<CartStore>()(
     }
   )
 );
-
-

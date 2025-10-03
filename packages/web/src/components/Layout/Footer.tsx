@@ -11,7 +11,6 @@ export function Footer() {
           flexWrap: "wrap",
           gap: 1,
           fontSize: "0.875rem",
-          color: "text.secondary",
         }}
       >
         <span>© {new Date().getFullYear()} Marco Collectibles.</span>
@@ -21,7 +20,7 @@ export function Footer() {
             href="https://www.facebook.com/AtomicSiopaoTv"
             target="_blank"
             rel="noopener noreferrer"
-            color="secondary"
+            color="primary"
             className="underline-offset-4"
           >
             AtomicSiopaoTV.

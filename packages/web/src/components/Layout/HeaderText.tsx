@@ -26,7 +26,6 @@ export function HeaderText() {
         variant="subtitle2"
         sx={{
           fontSize: "1rem",
-          color: "text.secondary",
         }}
       >
         Blast Into a World of Fun Finds!

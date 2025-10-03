@@ -23,15 +23,15 @@ const theme = createTheme({
   palette: {
     mode: "dark", // fits both Joker's chaos and Deadpool's edginess
     primary: {
-      main: "#6A0DAD", // Joker purple
-      light: "#9b4de0", // lighter purple
-      dark: "#4a0879", // deeper tone
+      main: "#2ECC71", // Joker green (swapped from secondary)
+      light: "#58d68d",
+      dark: "#1e8449",
       contrastText: "#FFFFFF",
     },
     secondary: {
-      main: "#2ECC71", // Joker green
-      light: "#58d68d",
-      dark: "#1e8449",
+      main: "#6A0DAD", // Joker purple (swapped from primary)
+      light: "#9b4de0",
+      dark: "#4a0879",
       contrastText: "#FFFFFF",
     },
     success: {
@@ -74,9 +74,9 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    h1: { fontSize: "2.5rem", fontWeight: 700, color: "#6A0DAD" }, // Joker purple
+    h1: { fontSize: "2.5rem", fontWeight: 700, color: "#2ECC71" }, // Joker green (swapped)
     h2: { fontSize: "2rem", fontWeight: 600, color: "#B71C1C" }, // Deadpool crimson
-    h3: { fontSize: "1.8rem", fontWeight: 500, color: "#2ECC71" }, // Joker green
+    h3: { fontSize: "1.8rem", fontWeight: 500, color: "#6A0DAD" }, // Joker purple (swapped)
     h4: { fontSize: "1.6rem" },
     h5: { fontSize: "1.2rem" },
     h6: { fontSize: "1rem" },
@@ -115,12 +115,29 @@ const theme = createTheme({
           fontWeight: 600,
         },
         containedPrimary: {
-          backgroundColor: "#6A0DAD",
-          "&:hover": { backgroundColor: "#4a0879" },
+          backgroundColor: "#229954", // swapped to green
+          "&:hover": { backgroundColor: "#2ECC71" },
         },
         containedSecondary: {
-          backgroundColor: "#B71C1C",
-          "&:hover": { backgroundColor: "#7f0000" },
+          backgroundColor: "#6A0DAD", // swapped to purple
+          "&:hover": { backgroundColor: "#4a0879" },
+        },
+        outlinedPrimary: {
+          border: "2px solid #2ECC71",
+          color: "#2ECC71",
+          "&:hover": {
+            border: "2px solid #1e8449",
+            backgroundColor: "rgba(46, 204, 113, 0.1)", // subtle green tint
+          },
+        },
+        outlinedSecondary: {
+          border: "2px solid #6A0DAD",
+          backgroundColor: "rgba(106, 13, 173, 0.2)", // subtle purple tint
+          color: "#FFFFFF",
+          "&:hover": {
+            border: "2px solid #9b4de0",
+            backgroundColor: "rgba(106, 13, 173, 0.5)", // subtle purple tint
+          },
         },
       },
     },

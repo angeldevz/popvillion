@@ -2,7 +2,7 @@
 import {
   LightButton,
   PremiumButton,
-  SecondaryButton,
+  PrimaryButton,
 } from "@components/Button/PrimaryButton";
 import { CollectionItemFragmentFragment } from "@generated/index";
 import { useCart } from "@hooks/useCart";
@@ -41,6 +41,7 @@ export function CollectionItem({ collection }: Props) {
     <Grow in={true} timeout={200}>
       <Card
         variant="elevation"
+        elevation={3}
         sx={{
           width: "100%",
           height: "100%",
@@ -79,9 +80,9 @@ export function CollectionItem({ collection }: Props) {
           ) : collection.negotiable ? (
             <PremiumButton>Send offer</PremiumButton>
           ) : (
-            <SecondaryButton variant="contained" onClick={add}>
+            <PrimaryButton variant="contained" onClick={add}>
               Add to Cart
-            </SecondaryButton>
+            </PrimaryButton>
           )}
         </CardActions>
       </Card>

@@ -1,6 +1,6 @@
 "use client";
-import { Box, Card, Typography } from "@mui/material";
-
+import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
+import { Box, Button, Card, Typography } from "@mui/material";
 export default function About() {
   const data = [
     {
@@ -77,17 +77,31 @@ export default function About() {
               transition: "all 0.2s ease",
               "&:hover": {
                 filter: "brightness(1.1)", // subtle hover effect
-                transform: "translateY(-2px)",
+                transform: "scale(1.025)",
               },
             }}
           >
-            <Typography variant="h3" sx={{ fontWeight: 600 }}>
+            <Typography color="primary" variant="h3" sx={{ fontWeight: 500 }}>
               {item.title}
             </Typography>
             <Typography variant="subtitle2">{item.description}</Typography>
           </Card>
         ))}
       </Box>
+      <Button
+        href="https://m.me/AtomicSiopaoTv"
+        target="_blank"
+        rel="noopener noreferrer"
+        sx={{
+          display: "flex",
+          flexFlow: "row",
+          gap: 1,
+          alignItems: "center",
+        }}
+      >
+        <ChatBubbleIcon />
+        Let's have a discussion!
+      </Button>
     </Box>
   );
 }

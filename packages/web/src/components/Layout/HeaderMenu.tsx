@@ -1,6 +1,7 @@
 "use client";
 import { useCart } from "@hooks/useCart";
-import { List, ListItem, Typography } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Badge, List, ListItem, Typography } from "@mui/material";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -14,10 +15,18 @@ export function HeaderMenu() {
     { name: "Contact", href: "/contact/" },
     {
       name: (
-        <span className="flex flex-row gap-2">
-          <span>Cart</span>
-          <span>({cart.length})</span>
-        </span>
+        <Badge
+          badgeContent={cart.length}
+          color="secondary"
+          sx={{
+            display: "flex",
+            flexFlow: "row",
+            gap: 1,
+            alignItems: "center",
+          }}
+        >
+          Cart <ShoppingCartIcon sx={{ fontSize: "1rem" }} />
+        </Badge>
       ),
       href: "/cart",
     },
@@ -40,14 +49,14 @@ export function HeaderMenu() {
               ":hover": {
                 textDecoration: "underline",
                 textUnderlineOffset: ".5rem",
-                color: "secondary.light",
+                color: "primary.main",
                 backgroundColor: "transparent",
               },
               ...(pathname === item.href
                 ? {
                     textDecoration: "underline",
                     textUnderlineOffset: ".5rem",
-                    color: "secondary.light",
+                    color: "primary.main",
                     backgroundColor: "transparent",
                   }
                 : {}),
